@@ -21,12 +21,21 @@
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="35"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="快进到暴死" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-tv-3ua">
+                                <rect key="frame" x="120" y="316" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kcf-dx-7jh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7IA-xx-DqB"/>
+                            <constraint firstItem="wNm-tv-3ua" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="DPN-E9-PLC"/>
                             <constraint firstItem="kcf-dx-7jh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="Jea-7q-am1"/>
+                            <constraint firstItem="wNm-tv-3ua" firstAttribute="top" secondItem="kcf-dx-7jh" secondAttribute="bottom" constant="70" id="dd9-5N-bkH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wNm-tv-3ua" secondAttribute="trailing" constant="120" id="p6J-Js-QiB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kcf-dx-7jh" secondAttribute="trailing" constant="20" id="w74-AR-iuw"/>
                         </constraints>
                     </view>
