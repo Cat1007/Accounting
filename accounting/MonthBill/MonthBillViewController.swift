@@ -29,10 +29,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billListCell", for: indexPath) as! BillListTableViewCell
         
-        cell.amountText.text = String(billList[indexPath.row].amount)
+        cell.amountText.text = "+\(billList[indexPath.row].amount)"
         cell.accountText.text = billList[indexPath.row].account
-        cell.remarkText.text = "test"
         cell.typeText.text = billList[indexPath.row].type
+        
+        if indexPath.row == 3 {
+            cell.remarkText.isHidden = true
+        } else {
+            cell.remarkText.isHidden = false
+            cell.remarkText.text = "test"
+        }
         
         return cell
     }
