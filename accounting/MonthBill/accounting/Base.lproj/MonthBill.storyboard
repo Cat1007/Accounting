@@ -119,7 +119,7 @@
                         <barButtonItem key="rightBarButtonItem" image="calendar.badge.clock" catalog="system" id="gc3-EQ-7Hu">
                             <connections>
                                 <action selector="chooseMonth:" destination="BYZ-38-t0r" id="jrz-sm-XSe"/>
-                                <segue destination="B07-ni-RoP" kind="popoverPresentation" popoverAnchorBarButtonItem="gc3-EQ-7Hu" id="TAF-CU-1Mn">
+                                <segue destination="wfk-XH-Haa" kind="popoverPresentation" popoverAnchorBarButtonItem="gc3-EQ-7Hu" id="iWL-4k-V2o">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -133,6 +133,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1291.304347826087" y="-1167.1875"/>
+        </scene>
+        <!--AddBill-->
+        <scene sceneID="mdH-T7-UJ7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddBill" id="wfk-XH-Haa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVH-Mz-ToW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="-1167"/>
         </scene>
         <!--Item-->
         <scene sceneID="DBh-uk-Zor">
@@ -150,14 +158,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eny-oH-6r1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2170" y="-1167"/>
-        </scene>
-        <!--AddBill-->
-        <scene sceneID="8Am-ZE-h3o">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddBill" id="B07-ni-RoP" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="55D-qK-VDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-417" y="-1167"/>
         </scene>
     </scenes>
     <resources>
