@@ -28,7 +28,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="399-d1-a98" kind="show" id="wM0-7M-EAX"/>
+                                    <segue destination="399-d1-a98" kind="popoverPresentation" popoverAnchorView="mzK-rF-s2U" id="anb-eN-hlC">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1291" y="-1167"/>
+            <point key="canvasLocation" x="-1291.304347826087" y="-1167.1875"/>
         </scene>
         <!--收支统计-->
         <scene sceneID="cjy-Ql-Rhf">
@@ -101,7 +103,7 @@
             <objects>
                 <viewController title="NoteBill" id="399-d1-a98" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0CT-s7-Inl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Uqv-fW-l7P"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -110,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F7-kk-bFX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-349" y="-1167"/>
+            <point key="canvasLocation" x="-417" y="-1167"/>
         </scene>
         <!--Item-->
         <scene sceneID="DBh-uk-Zor">
