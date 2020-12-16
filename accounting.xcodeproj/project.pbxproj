@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		165325B925899CA400404091 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325B825899CA400404091 /* MainViewController.swift */; };
+		165325B925899CA400404091 /* MonthBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325B825899CA400404091 /* MonthBillViewController.swift */; };
 		165325C22589AB4200404091 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C12589AB4200404091 /* Bill.swift */; };
 		165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C92589B1F000404091 /* BillListTableViewCell.swift */; };
 		165325D02589BBE200404091 /* AssetManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325CE2589BBE200404091 /* AssetManagement.storyboard */; };
@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		165325B825899CA400404091 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		165325B825899CA400404091 /* MonthBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillViewController.swift; sourceTree = "<group>"; };
 		165325C12589AB4200404091 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		165325C92589B1F000404091 /* BillListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewCell.swift; sourceTree = "<group>"; };
 		165325CF2589BBE200404091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/Base.lproj/AssetManagement.storyboard; sourceTree = "<group>"; };
@@ -88,15 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		165325B725899C7000404091 /* MainView */ = {
-			isa = PBXGroup;
-			children = (
-				165325B825899CA400404091 /* MainViewController.swift */,
-				165325C92589B1F000404091 /* BillListTableViewCell.swift */,
-			);
-			path = MainView;
-			sourceTree = "<group>";
-		};
 		165325C02589AB3200404091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +115,8 @@
 		165325E42589BCB200404091 /* MonthBill */ = {
 			isa = PBXGroup;
 			children = (
+				165325C92589B1F000404091 /* BillListTableViewCell.swift */,
+				165325B825899CA400404091 /* MonthBillViewController.swift */,
 				165325DE2589BCAB00404091 /* MonthBill.storyboard */,
 			);
 			path = MonthBill;
@@ -165,7 +158,6 @@
 				165325DA2589BC4700404091 /* AssetManagement */,
 				165325D92589BC2200404091 /* Statistics */,
 				165325C02589AB3200404091 /* Model */,
-				165325B725899C7000404091 /* MainView */,
 				18FCF7812581C28C0084241B /* AppDelegate.swift */,
 				18FCF7832581C28C0084241B /* ViewController.swift */,
 				18FCF7852581C28C0084241B /* Main.storyboard */,
@@ -330,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165325C22589AB4200404091 /* Bill.swift in Sources */,
-				165325B925899CA400404091 /* MainViewController.swift in Sources */,
+				165325B925899CA400404091 /* MonthBillViewController.swift in Sources */,
 				18FCF7842581C28C0084241B /* ViewController.swift in Sources */,
 				18FCF7822581C28C0084241B /* AppDelegate.swift in Sources */,
 				165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */,
