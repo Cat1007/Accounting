@@ -56,14 +56,192 @@
                     <view key="view" contentMode="scaleToFill" id="Dcr-Re-Z2C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-58-sKW">
+                                <rect key="frame" x="20" y="114" width="374" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收支总览" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRz-X5-tCm">
+                                        <rect key="frame" x="152" y="19" width="70" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Ugk-1R-nor"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsI-gp-rll">
+                                        <rect key="frame" x="70" y="55" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-5B-yhK">
+                                        <rect key="frame" x="273" y="55" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日平均支出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9z-I6-F6i">
+                                        <rect key="frame" x="250.5" y="108.5" width="76.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结余" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsi-wO-CMe">
+                                        <rect key="frame" x="70" y="108.5" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeZ-LD-R0y" userLabel="zhichuNum">
+                                        <rect key="frame" x="67" y="75" width="37.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrp-yH-Qu1" userLabel="jieyuNum">
+                                        <rect key="frame" x="67" y="128.5" width="37.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9m-Cb-gue" userLabel="shouruNum">
+                                        <rect key="frame" x="270" y="75" width="37.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRl-cf-vPR" userLabel="dayavgNum">
+                                        <rect key="frame" x="270" y="128.5" width="37.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="nRz-X5-tCm" firstAttribute="top" secondItem="nyT-58-sKW" secondAttribute="top" constant="19" id="1Jr-fh-Sjs"/>
+                                    <constraint firstItem="J9m-Cb-gue" firstAttribute="top" secondItem="oIh-5B-yhK" secondAttribute="bottom" constant="2" id="56Q-U6-TrR"/>
+                                    <constraint firstItem="p9z-I6-F6i" firstAttribute="top" secondItem="J9m-Cb-gue" secondAttribute="bottom" constant="13" id="570-4N-cgP"/>
+                                    <constraint firstItem="Mrp-yH-Qu1" firstAttribute="top" secondItem="bsi-wO-CMe" secondAttribute="bottom" constant="2" id="B9C-FI-yNH"/>
+                                    <constraint firstItem="cRl-cf-vPR" firstAttribute="top" secondItem="p9z-I6-F6i" secondAttribute="bottom" constant="2" id="HT9-41-Bv9"/>
+                                    <constraint firstItem="oeZ-LD-R0y" firstAttribute="top" secondItem="tsI-gp-rll" secondAttribute="bottom" constant="2" id="IbR-pu-Zre"/>
+                                    <constraint firstItem="nRz-X5-tCm" firstAttribute="centerX" secondItem="nyT-58-sKW" secondAttribute="centerX" id="Neh-Q3-dhd"/>
+                                    <constraint firstItem="tsI-gp-rll" firstAttribute="centerX" secondItem="oeZ-LD-R0y" secondAttribute="centerX" id="OAf-Oo-AO4"/>
+                                    <constraint firstItem="oIh-5B-yhK" firstAttribute="centerX" secondItem="J9m-Cb-gue" secondAttribute="centerX" id="RYf-RX-53Z"/>
+                                    <constraint firstItem="cRl-cf-vPR" firstAttribute="centerX" secondItem="J9m-Cb-gue" secondAttribute="centerX" id="T7Q-N4-J1h"/>
+                                    <constraint firstItem="p9z-I6-F6i" firstAttribute="centerX" secondItem="J9m-Cb-gue" secondAttribute="centerX" id="ZCh-nz-pwM"/>
+                                    <constraint firstItem="tsI-gp-rll" firstAttribute="leading" secondItem="nyT-58-sKW" secondAttribute="leading" constant="70" id="dPL-N7-Vjk"/>
+                                    <constraint firstItem="tsI-gp-rll" firstAttribute="top" secondItem="nyT-58-sKW" secondAttribute="top" constant="55" id="eG3-i5-9Er"/>
+                                    <constraint firstItem="bsi-wO-CMe" firstAttribute="centerX" secondItem="oeZ-LD-R0y" secondAttribute="centerX" id="fb8-Lc-VQ6"/>
+                                    <constraint firstItem="Mrp-yH-Qu1" firstAttribute="centerX" secondItem="oeZ-LD-R0y" secondAttribute="centerX" id="hbt-g1-Jf8"/>
+                                    <constraint firstAttribute="height" constant="180" id="og2-fF-872"/>
+                                    <constraint firstItem="bsi-wO-CMe" firstAttribute="top" secondItem="oeZ-LD-R0y" secondAttribute="bottom" constant="13" id="sGQ-PE-44B"/>
+                                    <constraint firstItem="oIh-5B-yhK" firstAttribute="top" secondItem="nyT-58-sKW" secondAttribute="top" constant="55" id="tBf-4t-FsG"/>
+                                    <constraint firstAttribute="trailing" secondItem="oIh-5B-yhK" secondAttribute="trailing" constant="70" id="w3C-ey-OzA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZw-Xj-hpd">
+                                <rect key="frame" x="20" y="312" width="374" height="500"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日报表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dI8-0x-dRh">
+                                        <rect key="frame" x="161" y="19" width="52" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XaS-8t-UOz">
+                                        <rect key="frame" x="69" y="44.5" width="236" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日平均支出：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9q-bf-d6S">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dri-Os-eHX" userLabel="dayavgNum">
+                                                <rect key="frame" x="104" y="0.0" width="31" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub4-ah-S2R">
+                                                <rect key="frame" x="147" y="0.0" width="46" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqe-G5-ZaJ" userLabel="shouruNum">
+                                                <rect key="frame" x="205" y="0.0" width="31" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3i6-LZ-wNu">
+                                        <rect key="frame" x="8" y="114" width="358" height="386"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="WRJ-BB-Kd7">
+                                        <rect key="frame" x="30" y="77.5" width="314" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1o-xA-y8v">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWM-yN-Ks7">
+                                                <rect key="frame" x="93" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nV-Sd-eOJ">
+                                                <rect key="frame" x="186" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结余" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a73-GQ-1ig">
+                                                <rect key="frame" x="279" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="WRJ-BB-Kd7" firstAttribute="top" secondItem="XaS-8t-UOz" secondAttribute="bottom" constant="15" id="0xX-H6-EtT"/>
+                                    <constraint firstAttribute="height" constant="500" id="Gm6-Q0-4xM"/>
+                                    <constraint firstItem="WRJ-BB-Kd7" firstAttribute="centerX" secondItem="tZw-Xj-hpd" secondAttribute="centerX" id="H2B-RD-jH6"/>
+                                    <constraint firstItem="dI8-0x-dRh" firstAttribute="centerX" secondItem="tZw-Xj-hpd" secondAttribute="centerX" id="RwD-Xv-eg4"/>
+                                    <constraint firstItem="XaS-8t-UOz" firstAttribute="top" secondItem="dI8-0x-dRh" secondAttribute="bottom" constant="5" id="SVJ-Zs-ple"/>
+                                    <constraint firstItem="dI8-0x-dRh" firstAttribute="top" secondItem="tZw-Xj-hpd" secondAttribute="top" constant="19" id="X78-NT-n9G"/>
+                                    <constraint firstItem="XaS-8t-UOz" firstAttribute="centerX" secondItem="tZw-Xj-hpd" secondAttribute="centerX" id="jfb-6z-d60"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dsk-BM-mee"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="tZw-Xj-hpd" firstAttribute="leading" secondItem="nyT-58-sKW" secondAttribute="leading" id="2JE-56-jaq"/>
+                            <constraint firstItem="nyT-58-sKW" firstAttribute="trailing" secondItem="Dcr-Re-Z2C" secondAttribute="trailingMargin" id="64D-Xh-aRm"/>
+                            <constraint firstItem="tZw-Xj-hpd" firstAttribute="top" secondItem="nyT-58-sKW" secondAttribute="bottom" constant="18" id="LhL-9Q-OzX"/>
+                            <constraint firstItem="tZw-Xj-hpd" firstAttribute="trailing" secondItem="nyT-58-sKW" secondAttribute="trailing" id="g6u-mp-Gym"/>
+                            <constraint firstItem="nyT-58-sKW" firstAttribute="leading" secondItem="Dcr-Re-Z2C" secondAttribute="leadingMargin" id="ign-8W-dsH"/>
+                            <constraint firstItem="nyT-58-sKW" firstAttribute="top" secondItem="dsk-BM-mee" secondAttribute="top" constant="26" id="wCt-bJ-Man"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="收支统计" id="rjd-yM-K6g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDg-r3-6ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1291" y="-482"/>
+            <point key="canvasLocation" x="-1291.304347826087" y="-482.14285714285711"/>
         </scene>
         <!--Item-->
         <scene sceneID="nkq-XH-YIk">
@@ -90,13 +268,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="TqA-eN-gjp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                     </view>
                     <navigationItem key="navigationItem" title="资产管理" id="9Ie-Ob-3LW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKf-fU-bJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1291" y="185"/>
+            <point key="canvasLocation" x="-1291.304347826087" y="184.82142857142856"/>
         </scene>
         <!--NoteBill-->
         <scene sceneID="x1G-Oz-2xN">
@@ -172,6 +350,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
