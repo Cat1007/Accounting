@@ -10,6 +10,10 @@
 		165325B925899CA400404091 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325B825899CA400404091 /* MainViewController.swift */; };
 		165325C22589AB4200404091 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C12589AB4200404091 /* Bill.swift */; };
 		165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C92589B1F000404091 /* BillListTableViewCell.swift */; };
+		165325D02589BBE200404091 /* AssetManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325CE2589BBE200404091 /* AssetManagement.storyboard */; };
+		165325D52589BC1500404091 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325D42589BC1500404091 /* Statistics.storyboard */; };
+		165325E02589BCAB00404091 /* MonthBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325DE2589BCAB00404091 /* MonthBill.storyboard */; };
+		16D49C1F2589BD01007CF1A9 /* AddBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D49C1E2589BD01007CF1A9 /* AddBill.storyboard */; };
 		18FCF7822581C28C0084241B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCF7812581C28C0084241B /* AppDelegate.swift */; };
 		18FCF7842581C28C0084241B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCF7832581C28C0084241B /* ViewController.swift */; };
 		18FCF7872581C28C0084241B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FCF7852581C28C0084241B /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 		165325B825899CA400404091 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		165325C12589AB4200404091 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		165325C92589B1F000404091 /* BillListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewCell.swift; sourceTree = "<group>"; };
+		165325CF2589BBE200404091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/Base.lproj/AssetManagement.storyboard; sourceTree = "<group>"; };
+		165325D42589BC1500404091 /* Statistics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Statistics.storyboard; sourceTree = "<group>"; };
+		165325DF2589BCAB00404091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/Base.lproj/MonthBill.storyboard; sourceTree = "<group>"; };
+		16D49C1E2589BD01007CF1A9 /* AddBill.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddBill.storyboard; sourceTree = SOURCE_ROOT; };
 		18FCF77E2581C28C0084241B /* accounting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accounting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCF7812581C28C0084241B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18FCF7832581C28C0084241B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +105,38 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		165325D92589BC2200404091 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				165325D42589BC1500404091 /* Statistics.storyboard */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		165325DA2589BC4700404091 /* AssetManagement */ = {
+			isa = PBXGroup;
+			children = (
+				165325CE2589BBE200404091 /* AssetManagement.storyboard */,
+			);
+			path = AssetManagement;
+			sourceTree = "<group>";
+		};
+		165325E42589BCB200404091 /* MonthBill */ = {
+			isa = PBXGroup;
+			children = (
+				165325DE2589BCAB00404091 /* MonthBill.storyboard */,
+			);
+			path = MonthBill;
+			sourceTree = "<group>";
+		};
+		16D49C1A2589BCE3007CF1A9 /* AddBill */ = {
+			isa = PBXGroup;
+			children = (
+				16D49C1E2589BD01007CF1A9 /* AddBill.storyboard */,
+			);
+			path = AddBill;
+			sourceTree = "<group>";
+		};
 		18FCF7752581C28C0084241B = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +160,10 @@
 		18FCF7802581C28C0084241B /* accounting */ = {
 			isa = PBXGroup;
 			children = (
+				16D49C1A2589BCE3007CF1A9 /* AddBill */,
+				165325E42589BCB200404091 /* MonthBill */,
+				165325DA2589BC4700404091 /* AssetManagement */,
+				165325D92589BC2200404091 /* Statistics */,
 				165325C02589AB3200404091 /* Model */,
 				165325B725899C7000404091 /* MainView */,
 				18FCF7812581C28C0084241B /* AppDelegate.swift */,
@@ -254,8 +298,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165325E02589BCAB00404091 /* MonthBill.storyboard in Resources */,
+				16D49C1F2589BD01007CF1A9 /* AddBill.storyboard in Resources */,
 				18FCF78C2581C28C0084241B /* LaunchScreen.storyboard in Resources */,
 				18FCF7892581C28C0084241B /* Assets.xcassets in Resources */,
+				165325D02589BBE200404091 /* AssetManagement.storyboard in Resources */,
+				165325D52589BC1500404091 /* Statistics.storyboard in Resources */,
 				18FCF7872581C28C0084241B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +369,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		165325CE2589BBE200404091 /* AssetManagement.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				165325CF2589BBE200404091 /* Base */,
+			);
+			name = AssetManagement.storyboard;
+			sourceTree = "<group>";
+		};
+		165325DE2589BCAB00404091 /* MonthBill.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				165325DF2589BCAB00404091 /* Base */,
+			);
+			name = MonthBill.storyboard;
+			sourceTree = "<group>";
+		};
 		18FCF7852581C28C0084241B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
