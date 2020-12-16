@@ -18,23 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O37-on-hYJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="160"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O37-on-hYJ">
+                                <rect key="frame" x="20" y="88" width="394" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月支出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adx-ZD-s13">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="34.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12343" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGY-8I-mwR">
+                                        <rect key="frame" x="0.0" y="42.5" width="83.5" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-Eh-mea">
+                                        <rect key="frame" x="0.0" y="85.5" width="234" height="34.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1Mc-c4-SZM" userLabel="收入">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="34.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-Pv-GMC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="585.60" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJf-HH-6Gc">
+                                                        <rect key="frame" x="55.5" y="0.0" width="55.5" height="34.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="esj-XH-qV5" userLabel="结余">
+                                                <rect key="frame" x="131" y="0.0" width="103" height="34.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月结余" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0C-5G-2Xx">
+                                                        <rect key="frame" x="0.0" y="7" width="52" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="715.63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Er-bG-yBN">
+                                                        <rect key="frame" x="52" y="7" width="51" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="QRQ-pM-pb5"/>
+                                    <constraint firstAttribute="height" constant="120" id="QRQ-pM-pb5"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-cL-SNP">
-                                <rect key="frame" x="0.0" y="248" width="414" height="614"/>
+                                <rect key="frame" x="0.0" y="218" width="414" height="644"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="billListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billListCell" id="fCg-dp-YRS" customClass="BillListTableViewCell" customModule="accounting" customModuleProvider="target">
@@ -117,21 +160,27 @@
                             <constraint firstItem="5vE-cL-SNP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JLs-xU-qoy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5vE-cL-SNP" secondAttribute="bottom" id="PUo-LV-2JU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O37-on-hYJ" secondAttribute="trailing" id="XkZ-Ug-qAx"/>
-                            <constraint firstItem="O37-on-hYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eYQ-pf-sjx"/>
-                            <constraint firstItem="5vE-cL-SNP" firstAttribute="top" secondItem="O37-on-hYJ" secondAttribute="bottom" id="qLD-6q-92r"/>
+                            <constraint firstItem="O37-on-hYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYQ-pf-sjx"/>
+                            <constraint firstItem="5vE-cL-SNP" firstAttribute="top" secondItem="O37-on-hYJ" secondAttribute="bottom" constant="10" id="qLD-6q-92r"/>
                             <constraint firstItem="O37-on-hYJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qyN-FV-EEd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="cNE-7q-CVX"/>
                     <navigationItem key="navigationItem" title="2020-02" id="MoZ-zg-mlo">
-                        <barButtonItem key="rightBarButtonItem" image="calendar.badge.clock" catalog="system" id="gc3-EQ-7Hu">
-                            <connections>
-                                <action selector="chooseMonth:" destination="BYZ-38-t0r" id="jrz-sm-XSe"/>
-                                <segue destination="wfk-XH-Haa" kind="popoverPresentation" popoverAnchorBarButtonItem="gc3-EQ-7Hu" id="iWL-4k-V2o">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="QaJ-D8-NA7">
+                                <connections>
+                                    <segue destination="wfk-XH-Haa" kind="popoverPresentation" popoverAnchorBarButtonItem="QaJ-D8-NA7" id="eOL-5b-l2m">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="calendar.badge.clock" catalog="system" id="gc3-EQ-7Hu">
+                                <connections>
+                                    <action selector="chooseMonth:" destination="BYZ-38-t0r" id="jrz-sm-XSe"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="billListView" destination="5vE-cL-SNP" id="Vaj-Rh-Q1p"/>
@@ -150,11 +199,11 @@
             </objects>
             <point key="canvasLocation" x="-564" y="-1167"/>
         </scene>
-        <!--Item-->
+        <!--本月账单-->
         <scene sceneID="DBh-uk-Zor">
             <objects>
                 <navigationController id="mK9-iu-oyG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="R7P-Ic-gh6"/>
+                    <tabBarItem key="tabBarItem" title="本月账单" image="note.text" catalog="system" id="R7P-Ic-gh6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PwZ-Oa-xda">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -170,14 +219,13 @@
     </scenes>
     <resources>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
+        <image name="note.text" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

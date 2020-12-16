@@ -15,6 +15,16 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return billList.count
     }
     
+    // 返回有多少个小节
+    func numberOfSections(in: UITableView) -> Int {
+        return 2
+    }
+    
+    // 返回小节标题
+    func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
+        return "20.06.05"
+    }
+    
     // 返回对应的cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billListCell", for: indexPath) as! BillListTableViewCell
@@ -38,7 +48,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         navigation.title = "自定义月份test"
         
-        for _ in 0..<10 {
+        for _ in 0 ..< 10 {
             billList.append(Bill(amount: 10.00, account: "微信", time: "2020-01-11", type: "三餐"))
         }
         
