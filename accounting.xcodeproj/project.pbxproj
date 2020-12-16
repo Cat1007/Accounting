@@ -134,7 +134,7 @@
 			children = (
 				16D49C1E2589BD01007CF1A9 /* AddBill.storyboard */,
 			);
-			path = AddBill;
+			name = AddBill;
 			sourceTree = "<group>";
 		};
 		18FCF7752581C28C0084241B = {

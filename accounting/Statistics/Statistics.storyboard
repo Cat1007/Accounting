@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hIv-bL-GLt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,16 +14,104 @@
             <objects>
                 <viewController id="DAJ-vq-jPo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dcr-Re-Z2C">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="907-jm-X2i">
+                                <rect key="frame" x="20" y="103" width="374" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收支总览" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-Ue-ajc">
+                                        <rect key="frame" x="152" y="20" width="70" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15D-XA-lVL">
+                                        <rect key="frame" x="80" y="60" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkI-US-Ulo">
+                                        <rect key="frame" x="263" y="60" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结余" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-Co-HtB">
+                                        <rect key="frame" x="80" y="121" width="31" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日平均支出" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U90-zo-rit">
+                                        <rect key="frame" x="240" y="121" width="77" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-We-zSw">
+                                        <rect key="frame" x="78.5" y="83" width="34" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2v-e9-LgY">
+                                        <rect key="frame" x="261.5" y="83" width="34" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8z-sr-1wG">
+                                        <rect key="frame" x="261.5" y="144" width="34" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-Mc-Rzn">
+                                        <rect key="frame" x="78.5" y="144" width="34" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="15D-XA-lVL" firstAttribute="top" secondItem="907-jm-X2i" secondAttribute="top" constant="60" id="0VJ-4E-g7N"/>
+                                    <constraint firstItem="JcC-Mc-Rzn" firstAttribute="centerX" secondItem="15D-XA-lVL" secondAttribute="centerX" id="22E-4f-G6U"/>
+                                    <constraint firstItem="JcC-Mc-Rzn" firstAttribute="top" secondItem="TNA-Co-HtB" secondAttribute="bottom" constant="5" id="5Bc-2p-fmQ"/>
+                                    <constraint firstItem="U90-zo-rit" firstAttribute="top" secondItem="l2v-e9-LgY" secondAttribute="bottom" constant="20" id="AHh-ql-daS"/>
+                                    <constraint firstItem="dfQ-Ue-ajc" firstAttribute="centerX" secondItem="907-jm-X2i" secondAttribute="centerX" id="GIb-bS-ML0"/>
+                                    <constraint firstItem="Osf-We-zSw" firstAttribute="top" secondItem="15D-XA-lVL" secondAttribute="bottom" constant="5" id="H8Z-91-gtO"/>
+                                    <constraint firstItem="H8z-sr-1wG" firstAttribute="centerX" secondItem="ZkI-US-Ulo" secondAttribute="centerX" id="IUm-mS-L01"/>
+                                    <constraint firstItem="ZkI-US-Ulo" firstAttribute="top" secondItem="907-jm-X2i" secondAttribute="top" constant="60" id="Jit-vG-yYl"/>
+                                    <constraint firstItem="l2v-e9-LgY" firstAttribute="top" secondItem="ZkI-US-Ulo" secondAttribute="bottom" constant="5" id="Jyn-Fd-cSt"/>
+                                    <constraint firstItem="l2v-e9-LgY" firstAttribute="centerX" secondItem="ZkI-US-Ulo" secondAttribute="centerX" id="N6e-sT-lvX"/>
+                                    <constraint firstItem="H8z-sr-1wG" firstAttribute="top" secondItem="U90-zo-rit" secondAttribute="bottom" constant="5" id="XAd-oG-WAx"/>
+                                    <constraint firstItem="Osf-We-zSw" firstAttribute="centerX" secondItem="15D-XA-lVL" secondAttribute="centerX" id="eeM-g4-Kz0"/>
+                                    <constraint firstItem="dfQ-Ue-ajc" firstAttribute="top" secondItem="907-jm-X2i" secondAttribute="top" constant="20" id="kVK-2f-Vnj"/>
+                                    <constraint firstItem="TNA-Co-HtB" firstAttribute="centerX" secondItem="15D-XA-lVL" secondAttribute="centerX" id="kk8-5T-62V"/>
+                                    <constraint firstItem="TNA-Co-HtB" firstAttribute="top" secondItem="Osf-We-zSw" secondAttribute="bottom" constant="20" id="m9W-6j-QM3"/>
+                                    <constraint firstAttribute="height" constant="180" id="pVP-d6-SqB"/>
+                                    <constraint firstItem="U90-zo-rit" firstAttribute="centerX" secondItem="ZkI-US-Ulo" secondAttribute="centerX" id="riu-8Z-X5C"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZkI-US-Ulo" secondAttribute="trailing" constant="80" id="tb0-nC-zgc"/>
+                                    <constraint firstItem="15D-XA-lVL" firstAttribute="leading" secondItem="907-jm-X2i" secondAttribute="leading" constant="80" id="tcu-Jp-BiX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dsk-BM-mee"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="907-jm-X2i" firstAttribute="leading" secondItem="dsk-BM-mee" secondAttribute="leading" constant="20" id="5Ct-wr-Pll"/>
+                            <constraint firstItem="907-jm-X2i" firstAttribute="centerX" secondItem="Dcr-Re-Z2C" secondAttribute="centerX" id="ZaU-Fx-KMI"/>
+                            <constraint firstItem="907-jm-X2i" firstAttribute="top" secondItem="dsk-BM-mee" secondAttribute="top" constant="15" id="fdE-mg-vVl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="收支统计" id="rjd-yM-K6g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDg-r3-6ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1291" y="-482"/>
+            <point key="canvasLocation" x="-1291.304347826087" y="-482.14285714285711"/>
         </scene>
         <!--Item-->
         <scene sceneID="8Lz-6s-Gjg">
@@ -44,6 +134,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
