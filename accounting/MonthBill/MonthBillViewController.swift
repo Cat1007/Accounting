@@ -10,10 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // 返回列表项的个数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return billList.count
     }
     
+    // 返回对应的cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billListCell", for: indexPath) as! BillListTableViewCell
         
