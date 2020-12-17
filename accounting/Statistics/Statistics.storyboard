@@ -12,7 +12,7 @@
         <!--收支统计-->
         <scene sceneID="cjy-Ql-Rhf">
             <objects>
-                <viewController id="DAJ-vq-jPo" customClass="StatisticsViewController" customModule="accounting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DAJ-vq-jPo" customClass="StatisticsViewController" customModule="accounting" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dcr-Re-Z2C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,7 +140,7 @@
                                         <rect key="frame" x="0.0" y="63.5" width="384" height="486.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="57" id="ajS-r2-TZa" customClass="DayListTableViewCell" customModule="accounting" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayListCell" rowHeight="57" id="ajS-r2-TZa" customClass="DayListTableViewCell" customModule="accounting" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="384" height="57"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ajS-r2-TZa" id="z1j-EJ-12a">
@@ -215,7 +215,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="收支统计" id="rjd-yM-K6g"/>
                     <connections>
-                        <outlet property="dayTableView" destination="gow-Xn-7Cq" id="E0o-ds-5LQ"/>
+                        <outlet property="dayTableView" destination="gow-Xn-7Cq" id="lWn-KJ-qnF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDg-r3-6ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
