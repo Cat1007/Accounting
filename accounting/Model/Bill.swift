@@ -10,13 +10,17 @@ import Foundation
 class Bill {
     var amount: Float
     var account: String?
-    var time: String
+    var date: Date
+    
     var type: String
-
-    init(amount: Float, account: String, time: String, type: String) {
+    
+    var remark: String?
+    
+    init(amount: Float,account: String?,date: Date,type: String,remark: String?) {
         self.amount = amount
         self.account = account
-        self.time = time
+        self.date = date
         self.type = type
+        self.remark = remark
     }
 }

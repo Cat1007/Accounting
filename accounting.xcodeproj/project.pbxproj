@@ -15,8 +15,7 @@
 		165325D52589BC1500404091 /* Statistics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325D42589BC1500404091 /* Statistics.storyboard */; };
 		165325E02589BCAB00404091 /* MonthBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165325DE2589BCAB00404091 /* MonthBill.storyboard */; };
 		16D49C452589C292007CF1A9 /* AddBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D49C432589C292007CF1A9 /* AddBill.storyboard */; };
-		1873F68D258AEF5700E4763E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873F68C258AEF5700E4763E /* StatisticsViewController.swift */; };
-		1873F692258AF0C800E4763E /* DayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873F691258AF0C800E4763E /* DayListTableViewCell.swift */; };
+		16E9A032258AF19A009E9313 /* UTCTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E9A031258AF19A009E9313 /* UTCTime.swift */; };
 		18FCF7822581C28C0084241B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCF7812581C28C0084241B /* AppDelegate.swift */; };
 		18FCF7842581C28C0084241B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCF7832581C28C0084241B /* ViewController.swift */; };
 		18FCF7872581C28C0084241B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FCF7852581C28C0084241B /* Main.storyboard */; };
@@ -54,6 +53,7 @@
 		16D49C442589C292007CF1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/MonthBill/accounting/Base.lproj/AddBill.storyboard; sourceTree = "<group>"; };
 		1873F68C258AEF5700E4763E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		1873F691258AF0C800E4763E /* DayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListTableViewCell.swift; sourceTree = "<group>"; };
+		16E9A031258AF19A009E9313 /* UTCTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTime.swift; sourceTree = "<group>"; };
 		18FCF77E2581C28C0084241B /* accounting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accounting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCF7812581C28C0084241B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18FCF7832581C28C0084241B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				165325C12589AB4200404091 /* Bill.swift */,
+				16E9A031258AF19A009E9313 /* UTCTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +335,7 @@
 				165325B925899CA400404091 /* MonthBillViewController.swift in Sources */,
 				1873F692258AF0C800E4763E /* DayListTableViewCell.swift in Sources */,
 				18FCF7842581C28C0084241B /* ViewController.swift in Sources */,
+				16E9A032258AF19A009E9313 /* UTCTime.swift in Sources */,
 				18FCF7822581C28C0084241B /* AppDelegate.swift in Sources */,
 				165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */,
 				0CAA63BB2589D21400F33DE4 /* AddBillViewController.swift in Sources */,
