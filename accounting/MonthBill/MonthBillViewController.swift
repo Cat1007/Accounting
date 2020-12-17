@@ -10,26 +10,69 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private var billList = [Bill]()
+    // 按section存放Bill
+    private var billSection = [[Bill]]()
+    
+    private var selectedMonth = 0
+    private var selectedDay = 0
+    private var selectedYear = 0
+    
     // 返回列表项的个数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return billList.count
+        var count = section
+        
+        for sec in billSection {
+            // 遇到不为0的日期
+            if sec.count != 0 {
+                // 查看是否是所需要的日期
+                if count == 0 {
+                    return sec.count
+                } else {
+                    count-=1
+                }
+            }
+        }
+        
+        return 0
     }
     
     // 返回有多少个小节
     func numberOfSections(in: UITableView) -> Int {
-        return 2
+        var count = 0
+        for section in billSection {
+            if section.count != 0 {
+                count += 1
+            }
+        }
+        return count
     }
     
     // 返回小节标题
     func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
-        return "20.06.05"
+        var count = titleForHeaderInSection
+        
+        for sec in billSection {
+            // 遇到不为0的日期
+            if sec.count != 0 {
+                // 查看是否是所需要的日期
+                if count == 0 {
+                    let time = UTCTime(date: sec[0].date)
+                    return "\(time.month).\(time.day)"
+                } else {
+                    count-=1
+                }
+            }
+        }
+        
+        return ""
     }
     
     // 返回对应的cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billListCell", for: indexPath) as! BillListTableViewCell
         
-        cell.amountText.text = "+\(billList[indexPath.row].amount)"
+        cell.amountText.text = "\(billList[indexPath.row].amount)"
         cell.accountText.text = billList[indexPath.row].account
         cell.typeText.text = billList[indexPath.row].type
         
@@ -37,13 +80,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.remarkText.isHidden = true
         } else {
             cell.remarkText.isHidden = false
-            cell.remarkText.text = "test"
+            cell.remarkText.text = billList[indexPath.row].remark
         }
         
         return cell
     }
     
-    private var billList = [Bill]()
     
     @IBOutlet var navigation: UINavigationItem!
     @IBOutlet var billListView: UITableView!
@@ -52,16 +94,39 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigation.title = "自定义月份test"
+        let today = UTCTime(date: nil)
+        navigation.title = today.getTimeString()
         
-        for _ in 0 ..< 10 {
-            billList.append(Bill(amount: 10.00, account: "微信", time: "2020-01-11", type: "三餐"))
+        selectedMonth = today.month
+        selectedDay = today.day
+        selectedYear = today.year
+    
+        
+        for _ in 1 ..< 10 {
+            billList.append(Bill(amount: -23.43, account: "支付宝",date: Date(), type: "测试",remark: "\(today.year)  \(today.month)  \(today.day)"))
         }
+        // 初始化日期数组
+        for _ in 1 ..< 32 {
+            billSection.append([Bill]())
+        }
+        
+        arrangeBill(month: selectedMonth, year: selectedYear)
         
         billListView.delegate = self
         billListView.dataSource = self
     }
+    
+    // 整理月份数据
+    func arrangeBill(month: Int,year: Int) {
+        for bill in billList {
+            let time = UTCTime(date: bill.date)
+            if time.month == self.selectedMonth && time.year == self.selectedYear {
+                billSection[time.day].append(bill)
+            }
+        }
+    }
 
+    // 选择月份
     @IBAction func chooseMonth(_ sender: Any) {}
 
     /*
