@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mK9-iu-oyG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mK9-iu-oyG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,10 +33,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-Eh-mea">
-                                        <rect key="frame" x="0.0" y="85.5" width="234" height="34.5"/>
+                                        <rect key="frame" x="0.0" y="85.5" width="244" height="34.5"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1Mc-c4-SZM" userLabel="收入">
-                                                <rect key="frame" x="0.0" y="0.0" width="111" height="34.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Mc-c4-SZM" userLabel="收入">
+                                                <rect key="frame" x="0.0" y="0.0" width="116" height="34.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-Pv-GMC">
                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="34.5"/>
@@ -45,15 +45,15 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="585.60" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJf-HH-6Gc">
-                                                        <rect key="frame" x="55.5" y="0.0" width="55.5" height="34.5"/>
+                                                        <rect key="frame" x="60.5" y="0.0" width="55.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="esj-XH-qV5" userLabel="结余">
-                                                <rect key="frame" x="131" y="0.0" width="103" height="34.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="esj-XH-qV5" userLabel="结余">
+                                                <rect key="frame" x="136" y="0.0" width="108" height="34.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月结余" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0C-5G-2Xx">
                                                         <rect key="frame" x="0.0" y="7" width="52" height="20.5"/>
@@ -62,7 +62,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="715.63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Er-bG-yBN">
-                                                        <rect key="frame" x="52" y="7" width="51" height="20.5"/>
+                                                        <rect key="frame" x="57" y="7" width="51" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -152,17 +152,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkT-CN-nrM">
+                                <rect key="frame" x="0.0" y="213" width="414" height="649"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BkT-CN-nrM" firstAttribute="top" secondItem="O37-on-hYJ" secondAttribute="bottom" id="06a-zV-rRy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5vE-cL-SNP" secondAttribute="trailing" id="H0F-4C-2Bl"/>
                             <constraint firstItem="5vE-cL-SNP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JLs-xU-qoy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5vE-cL-SNP" secondAttribute="bottom" id="PUo-LV-2JU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O37-on-hYJ" secondAttribute="trailing" id="XkZ-Ug-qAx"/>
+                            <constraint firstItem="BkT-CN-nrM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZZF-aj-vPr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BkT-CN-nrM" secondAttribute="bottom" id="dRK-6H-0XQ"/>
                             <constraint firstItem="O37-on-hYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eYQ-pf-sjx"/>
                             <constraint firstItem="5vE-cL-SNP" firstAttribute="top" secondItem="O37-on-hYJ" secondAttribute="bottom" constant="5" id="qLD-6q-92r"/>
                             <constraint firstItem="O37-on-hYJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="qyN-FV-EEd"/>
+                            <constraint firstItem="BkT-CN-nrM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z55-aZ-gnT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="cNE-7q-CVX"/>
@@ -181,8 +189,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="balanceLabel" destination="2Er-bG-yBN" id="hll-We-5Pw"/>
                         <outlet property="billListView" destination="5vE-cL-SNP" id="Vaj-Rh-Q1p"/>
+                        <outlet property="expenditureLabel" destination="jGY-8I-mwR" id="cM0-nH-aFg"/>
+                        <outlet property="incomeLabel" destination="nJf-HH-6Gc" id="hJD-rb-8dc"/>
                         <outlet property="navigation" destination="MoZ-zg-mlo" id="Aev-SH-Cps"/>
+                        <outlet property="timePicker" destination="BkT-CN-nrM" id="MdE-EQ-FlT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
