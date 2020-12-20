@@ -38,6 +38,11 @@ class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    // 定义cell高度
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     // 返回小节标题
     func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
         let time = UTCTime(date: billList[titleForHeaderInSection][0].date)
