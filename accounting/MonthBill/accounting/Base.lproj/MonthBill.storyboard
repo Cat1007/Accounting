@@ -190,7 +190,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="QaJ-D8-NA7">
                             <connections>
-                                <segue destination="PeV-Vd-hty" kind="show" id="mpA-tq-nIH"/>
+                                <segue destination="wfk-XH-Haa" kind="popoverPresentation" popoverAnchorBarButtonItem="QaJ-D8-NA7" id="h2c-vt-jEd">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -215,33 +217,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVH-Mz-ToW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-564" y="-1167"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="04g-fp-8QX">
-            <objects>
-                <viewController id="PeV-Vd-hty" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f1c-YP-6OY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gks-4t-ghw">
-                                <rect key="frame" x="184" y="409" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="gGe-eo-bDq" kind="unwind" unwindAction="addBillWithSegue:" id="CwX-7h-lnH"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4ml-0D-vUg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eOZ-aP-sjl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hRR-ee-HBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="gGe-eo-bDq" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-75" y="-1167"/>
         </scene>
         <!--本月账单-->
         <scene sceneID="DBh-uk-Zor">
