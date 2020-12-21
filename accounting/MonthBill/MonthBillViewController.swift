@@ -9,6 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
     // 时间选择控制器
     private var timePickerController = MonthPickerController()
     // 账单列表控制器
@@ -37,6 +38,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var incomeLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
+    @IBOutlet weak var headerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +55,7 @@ class MainViewController: UIViewController {
         
         // 调试用填充数据
         for _ in 1 ..< 10 {
-            billList.append(Bill(amount: -23.43, account: "支付宝", date: Date(), type: "测试", remark: "\(today.year)  \(today.month)  \(today.day)"))
+            billList.append(Bill(amount: -23.43, date: Date(), type: "测试", account: "支付宝", remark: "\(today.year)  \(today.month)  \(today.day)"))
         }
         
         // 将本月账单检索并分类好

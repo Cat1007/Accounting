@@ -16,7 +16,7 @@ class Bill {
     
     var remark: String?
     
-    init(amount: Float,account: String?,date: Date,type: String,remark: String?) {
+    init(amount: Float, date: Date, type: String, account: String?, remark: String?) {
         self.amount = amount
         self.account = account
         self.date = date
