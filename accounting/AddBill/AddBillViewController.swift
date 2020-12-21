@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate {
+class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
     // 储存将要返回的bill
     var editBill: Bill?
 
@@ -17,9 +19,12 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     
     let expenditureArray:Array = ["三餐","交通","学习","衣服","日用品","医疗","娱乐","旅行","住房","请客送礼","零食","话费网费","汽车/加油","水电煤","其它"]
     let incomeArray:Array = ["工资","生活费","外快","股票基金","其他"]
-
+    let accountArray:Array = ["0","1","2","3","4","5","6","7","8","9"]
     @IBOutlet weak var selectTypeView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var timeSelect: UIDatePicker!
+    @IBOutlet weak var accountSelectButton: UIView!
+    @IBOutlet weak var accountSelect: UIPickerView!
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated:true,completion:nil)
     }
@@ -28,6 +33,8 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         super.viewDidLoad()
         selectTypeView.delegate = self
         selectTypeView.dataSource = self
+        accountSelect.delegate = self
+        accountSelect.dataSource = self
         //设置分类只能单选
         selectTypeView.allowsMultipleSelection = false
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 20, height: 20)
@@ -90,6 +97,19 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         let cell = collectionView.cellForItem(at: indexPath) as! SelectTypeCollectionViewCell
         cell.isSelected = false
         cell.cellStatusWithSelected(selected: false)
+    }
+    
+    // MARK: - UIPickerView DataSource
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 9
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 34
     }
     /*
     // MARK: - Navigation
