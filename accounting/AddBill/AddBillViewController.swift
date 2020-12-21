@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AddBillViewController: UIViewController {
+class AddBillViewController: UIViewController  {
     // 储存将要返回的bill
     var editBill: Bill?
 
+    @IBOutlet weak var selectTypeView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated:true,completion:nil)
@@ -19,6 +20,10 @@ class AddBillViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 20, height: 20)
+        (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing = 5
+        (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = 20
+
         // Do any additional setup after loading the view.
     }
     
