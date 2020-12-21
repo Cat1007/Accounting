@@ -8,15 +8,15 @@
 
 import UIKit
 
-class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate {
     // 储存将要返回的bill
     var editBill: Bill?
 
     var selectArray:Array = Array<String>()
-    var selectedIndexArray:Array = Array<IndexPath>()
+    var selectType:String = String()
     
-    let expenditureArray:Array = Array<String>()
-    let incomeArray:Array = Array<String>()
+    let expenditureArray:Array = ["三餐","交通","学习","衣服","日用品","医疗","娱乐","旅行","住房","请客送礼","零食","话费网费","汽车/加油","水电煤","其它"]
+    let incomeArray:Array = ["工资","生活费","外快","股票基金","其他"]
 
     @IBOutlet weak var selectTypeView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -27,7 +27,9 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         selectTypeView.delegate = self
-        selectTypeView.dataSource = self 
+        selectTypeView.dataSource = self
+        //设置分类只能单选
+        selectTypeView.allowsMultipleSelection = false
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 20, height: 20)
         //设置分类View单元格的水平间距
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).minimumInteritemSpacing = 5
@@ -35,8 +37,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing = 5
         //设置分类View的内边距
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 5,left: 20,bottom: 0,right: 20)
-
-        
+        selectArray = expenditureArray
         // Do any additional setup after loading the view.
     }
     
@@ -44,9 +45,15 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             selectArray = expenditureArray
+            self.selectTypeView.reloadData()
+            selectType = selectArray[0]
+            print(selectType)
             break
         case 1:
             selectArray = incomeArray
+            self.selectTypeView.reloadData()
+            selectType = selectArray[0]
+            print(selectType)
             break
         default:
             break
@@ -65,19 +72,24 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectTypeCell", for: indexPath) as! SelectTypeCollectionViewCell
         cell.cellLabel.text = selectArray[indexPath.row]
-        cell.cellStatusWithSelected(selected: ((selectedIndexArray.firstIndex(of:indexPath) != nil)))
+        cell.cellStatusWithSelected(selected: false)
         return cell
     }
     
+    //选中
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         let cell = collectionView.cellForItem(at: indexPath) as! SelectTypeCollectionViewCell
-        if let i = selectedIndexArray.firstIndex(of: indexPath){
-            selectedIndexArray.remove(at: i)
-            cell.cellStatusWithSelected(selected: false)
-        }else{
-            selectedIndexArray.append(indexPath)
-            cell.cellStatusWithSelected(selected: true)
-        }
+        cell.isSelected = true
+        selectType = cell.cellLabel.text!
+        print(selectType)
+        cell.cellStatusWithSelected(selected: true)
+    }
+    
+    //取消选中
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! SelectTypeCollectionViewCell
+        cell.isSelected = false
+        cell.cellStatusWithSelected(selected: false)
     }
     /*
     // MARK: - Navigation

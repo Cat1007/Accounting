@@ -18,13 +18,14 @@ class SelectTypeCollectionViewCell: UICollectionViewCell {
         cellBackground.layer.borderWidth = 1
         cellBackground.layer.cornerRadius = 20
         cellBackground.layer.borderColor = UIColor.lightGray.cgColor
+        cellLabel.textColor = UIColor.lightGray
     }
     
     //cell点击样式改变
     func cellStatusWithSelected(selected:Bool){
         if selected{
-            cellBackground.layer.borderColor = UIColor.red.cgColor
-            cellLabel.textColor = UIColor.red
+            cellBackground.layer.borderColor = UIColor.systemBlue.cgColor
+            cellLabel.textColor = UIColor.systemBlue
         }else{
             cellBackground.layer.borderColor = UIColor.lightGray.cgColor
             cellLabel.textColor = UIColor.lightGray
