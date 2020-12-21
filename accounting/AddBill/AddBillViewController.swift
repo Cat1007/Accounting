@@ -12,8 +12,6 @@ class AddBillViewController: UIViewController {
     // 储存将要返回的bill
     var editBill: Bill?
 
-    @IBOutlet weak var expenditrueView: UIView!
-    @IBOutlet weak var incomeView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated:true,completion:nil)
@@ -21,23 +19,9 @@ class AddBillViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        expenditrueView.isHidden = false
-        incomeView.isHidden = true
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            expenditrueView.isHidden = false
-            incomeView.isHidden = true
-        case 1:
-            expenditrueView.isHidden = true
-            incomeView.isHidden = false
-        default:
-            break
-        }
-    }
     
     
     /*
