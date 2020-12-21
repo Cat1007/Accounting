@@ -35,14 +35,14 @@
                                     <segment title="收入"/>
                                 </segments>
                                 <connections>
-                                    <action selector="indexChanged:" destination="rf3-Y1-YZ3" eventType="valueChanged" id="5Ne-ph-QJs"/>
+                                    <action selector="segmentChanged:" destination="rf3-Y1-YZ3" eventType="valueChanged" id="jki-YX-jPQ"/>
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="czn-ir-w43">
-                                <rect key="frame" x="0.0" y="98" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="5OT-Sn-hTI"/>
+                                    <constraint firstAttribute="height" constant="150" id="ZVU-Z8-NeO"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8o2-SY-kuP">
                                     <size key="itemSize" width="128" height="128"/>
@@ -51,7 +51,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="54s-eG-MRJ" customClass="SelectTypeCollectionViewCell" customModule="accounting" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="selectTypeCell" id="54s-eG-MRJ" customClass="SelectTypeCollectionViewCell" customModule="accounting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5qS-t6-Y2B">
@@ -85,30 +85,30 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ib-r6-o2e">
-                                <rect key="frame" x="309" y="306" width="85" height="43"/>
+                                <rect key="frame" x="309" y="256" width="85" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入金额" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vbj-W2-XOT">
-                                <rect key="frame" x="92" y="362.5" width="302" height="34"/>
+                                <rect key="frame" x="92" y="312.5" width="302" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wT9-e2-gz1">
-                                <rect key="frame" x="20" y="369" width="52" height="21"/>
+                                <rect key="frame" x="20" y="319" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RG4-U2-iw5">
-                                <rect key="frame" x="20" y="418" width="52" height="21"/>
+                                <rect key="frame" x="20" y="368" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="可选" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-tv-jiD">
-                                <rect key="frame" x="92" y="411.5" width="302" height="34"/>
+                                <rect key="frame" x="92" y="361.5" width="302" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
