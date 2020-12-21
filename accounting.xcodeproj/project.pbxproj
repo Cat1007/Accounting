@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C9A0ADF259085CF003062E5 /* SelectTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9A0ADE259085CF003062E5 /* SelectTypeCollectionViewCell.swift */; };
 		0CAA63BB2589D21400F33DE4 /* AddBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA63BA2589D21400F33DE4 /* AddBillViewController.swift */; };
+		160633022590B87A004214E5 /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 160633012590B87A004214E5 /* background.jpeg */; };
 		165325B925899CA400404091 /* MonthBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325B825899CA400404091 /* MonthBillViewController.swift */; };
 		165325C22589AB4200404091 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C12589AB4200404091 /* Bill.swift */; };
 		165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165325C92589B1F000404091 /* BillListTableViewCell.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0C9A0ADE259085CF003062E5 /* SelectTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		0CAA63BA2589D21400F33DE4 /* AddBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBillViewController.swift; sourceTree = "<group>"; };
+		160633012590B87A004214E5 /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
 		165325B825899CA400404091 /* MonthBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBillViewController.swift; sourceTree = "<group>"; };
 		165325C12589AB4200404091 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		165325C92589B1F000404091 /* BillListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				18FCF7812581C28C0084241B /* AppDelegate.swift */,
 				18FCF7832581C28C0084241B /* ViewController.swift */,
 				18FCF7852581C28C0084241B /* Main.storyboard */,
+				160633012590B87A004214E5 /* background.jpeg */,
 				18FCF7882581C28C0084241B /* Assets.xcassets */,
 				18FCF78A2581C28C0084241B /* LaunchScreen.storyboard */,
 				18FCF78D2581C28C0084241B /* Info.plist */,
@@ -314,6 +317,7 @@
 				165325E02589BCAB00404091 /* MonthBill.storyboard in Resources */,
 				16D49C452589C292007CF1A9 /* AddBill.storyboard in Resources */,
 				18FCF78C2581C28C0084241B /* LaunchScreen.storyboard in Resources */,
+				160633022590B87A004214E5 /* background.jpeg in Resources */,
 				18FCF7892581C28C0084241B /* Assets.xcassets in Resources */,
 				165325D02589BBE200404091 /* AssetManagement.storyboard in Resources */,
 				165325D52589BC1500404091 /* Statistics.storyboard in Resources */,

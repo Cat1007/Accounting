@@ -13,6 +13,12 @@ class MainViewController: UIViewController {
     private var timePickerController = MonthPickerController()
     // 账单列表控制器
     private var billListController = BillListController()
+    // 图片选择控制器
+    private var imagePiackerController = ImagePiackerController()
+    
+    // 背景图片存放路径
+    private let backgroundPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! +
+        "/background.data"
     
     // 所有的账单列表
     private var billList = [Bill]()
@@ -40,6 +46,8 @@ class MainViewController: UIViewController {
     @IBOutlet var balanceLabel: UILabel!
     
     @IBOutlet var headerView: UIView!
+    @IBOutlet var emptyHint: UILabel!
+    @IBOutlet var backgoundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +83,26 @@ class MainViewController: UIViewController {
         }
         timePicker.delegate = timePickerController
         timePicker.dataSource = timePickerController
+        
+        // 配置图片选择
+        if let backgroundPic = NSKeyedUnarchiver.unarchiveObject(withFile: backgroundPath) as? UIImage {
+            backgoundImage.image = backgroundPic
+        } else {
+            let defaultBackground = UIImage(named: "background.jpeg")
+            backgoundImage.image = defaultBackground
+        }
+        
+        imagePiackerController.setCallback{image in
+            self.dismiss(animated: true){
+                let success = NSKeyedArchiver.archiveRootObject(image, toFile: self.backgroundPath)
+                if success {
+                    self.backgoundImage.image = image
+                    print("save background success")
+                } else {
+                    print("save background fail")
+                }
+            }
+        }
     }
     
     // 整理月份数据
@@ -135,8 +163,15 @@ class MainViewController: UIViewController {
         timePicker.reloadAllComponents()
         
         // 配置账单列表
-        billListController.setBillData(bills: nonEmptyDayList)
-        billListView.reloadData()
+        if nonEmptyDayList.isEmpty {
+            billListView.isHidden = true
+            emptyHint.isHidden = false
+        } else {
+            emptyHint.isHidden = true
+            billListView.isHidden = false
+            billListController.setBillData(bills: nonEmptyDayList)
+            billListView.reloadData()
+        }
     }
     
     // 生成可供选择的月份
@@ -157,7 +192,29 @@ class MainViewController: UIViewController {
     // 选择月份
     @IBAction func chooseMonth(_ sender: Any) {
         // 控制控件的显示
-        timePicker.isHidden = !timePicker.isHidden
+        if timePicker.isHidden {
+            timePicker.alpha = 0
+            timePicker.isHidden = !timePicker.isHidden
+            UIView.animate(withDuration: 0.4, animations: {
+                self.timePicker.alpha = 1
+            })
+        } else {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.timePicker.alpha = 0
+            }) { _ in
+                self.timePicker.isHidden = !self.timePicker.isHidden
+            }
+        }
+    }
+    
+    @IBAction func tapBackground(_ sender: Any) {
+        print("tap")
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            imagePicker.delegate = imagePiackerController
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     // 添加账单后返回入口
@@ -190,5 +247,18 @@ class EnabledMonth {
     init(year: Int, month: Int) {
         self.year = year
         self.month = month
+    }
+}
+
+class ImagePiackerController: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    private var afterChoose: (UIImage) -> Void = {_ in }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        afterChoose(selectedImage!)
+    }
+    
+    func setCallback(callback: @escaping (UIImage) -> Void) {
+        self.afterChoose = callback
     }
 }

@@ -21,18 +21,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvb-qB-xEe" userLabel="首部收支统计">
                                 <rect key="frame" x="0.0" y="88" width="414" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O37-on-hYJ">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9Y-2g-TAj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                        <gestureRecognizers/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bEA-ND-3uZ" appends="YES" id="Ldq-LF-jDK"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O37-on-hYJ">
                                         <rect key="frame" x="20" y="0.0" width="394" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月支出" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adx-ZD-s13">
                                                 <rect key="frame" x="0.0" y="0.0" width="55.5" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12343" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGY-8I-mwR">
                                                 <rect key="frame" x="0.0" y="39" width="89" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-Eh-mea">
@@ -44,13 +53,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月收入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0i-Pv-GMC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="55.5" height="39"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="585.60" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJf-HH-6Gc">
                                                                 <rect key="frame" x="60.5" y="0.0" width="55.5" height="39"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -61,13 +70,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月结余" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0C-5G-2Xx">
                                                                 <rect key="frame" x="0.0" y="9.5" width="52" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="715.63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Er-bG-yBN">
                                                                 <rect key="frame" x="57" y="9.5" width="51" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -80,12 +89,22 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6Mj-ld-vPI"/>
+                                    <constraint firstItem="i9Y-2g-TAj" firstAttribute="leading" secondItem="yvb-qB-xEe" secondAttribute="leading" id="91I-hI-NZ2"/>
+                                    <constraint firstItem="i9Y-2g-TAj" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="top" id="CKW-ah-y0I"/>
                                     <constraint firstAttribute="bottom" secondItem="O37-on-hYJ" secondAttribute="bottom" id="GBc-pj-0w4"/>
                                     <constraint firstItem="O37-on-hYJ" firstAttribute="leading" secondItem="yvb-qB-xEe" secondAttribute="leading" constant="20" id="WuE-7x-Mtc"/>
                                     <constraint firstItem="O37-on-hYJ" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="top" id="dtK-As-VC1"/>
+                                    <constraint firstAttribute="bottom" secondItem="i9Y-2g-TAj" secondAttribute="bottom" id="qg0-a6-rSc"/>
+                                    <constraint firstAttribute="trailing" secondItem="i9Y-2g-TAj" secondAttribute="trailing" id="wdz-Py-8Dv"/>
                                     <constraint firstAttribute="trailing" secondItem="O37-on-hYJ" secondAttribute="trailing" id="x8Y-gk-QrX"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本月没有账单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCl-ed-gPd">
+                                <rect key="frame" x="146" y="208" width="122.5" height="654"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-cL-SNP">
                                 <rect key="frame" x="0.0" y="208" width="414" height="654"/>
                                 <prototypes>
@@ -170,14 +189,17 @@
                         <constraints>
                             <constraint firstItem="BkT-CN-nrM" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="bottom" id="22f-8S-98l"/>
                             <constraint firstItem="5vE-cL-SNP" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="bottom" id="5q4-LG-rt6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UCl-ed-gPd" secondAttribute="bottom" id="7qW-EV-Uul"/>
                             <constraint firstItem="yvb-qB-xEe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GRO-ep-aEB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5vE-cL-SNP" secondAttribute="trailing" id="H0F-4C-2Bl"/>
+                            <constraint firstItem="UCl-ed-gPd" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="bottom" id="Hdl-Ok-VBr"/>
                             <constraint firstItem="5vE-cL-SNP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JLs-xU-qoy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5vE-cL-SNP" secondAttribute="bottom" id="PUo-LV-2JU"/>
                             <constraint firstItem="BkT-CN-nrM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZZF-aj-vPr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="yvb-qB-xEe" secondAttribute="top" id="ajs-h2-ECA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BkT-CN-nrM" secondAttribute="bottom" id="dRK-6H-0XQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yvb-qB-xEe" secondAttribute="trailing" id="kjE-K0-vFf"/>
+                            <constraint firstItem="UCl-ed-gPd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r1w-47-2DF"/>
                             <constraint firstItem="BkT-CN-nrM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z55-aZ-gnT"/>
                         </constraints>
                     </view>
@@ -197,8 +219,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgoundImage" destination="i9Y-2g-TAj" id="jka-cJ-rEm"/>
                         <outlet property="balanceLabel" destination="2Er-bG-yBN" id="hll-We-5Pw"/>
                         <outlet property="billListView" destination="5vE-cL-SNP" id="Vaj-Rh-Q1p"/>
+                        <outlet property="emptyHint" destination="UCl-ed-gPd" id="gs0-Kf-XQF"/>
                         <outlet property="expenditureLabel" destination="jGY-8I-mwR" id="cM0-nH-aFg"/>
                         <outlet property="headerView" destination="yvb-qB-xEe" id="Uxr-HA-sk9"/>
                         <outlet property="incomeLabel" destination="nJf-HH-6Gc" id="hJD-rb-8dc"/>
@@ -207,6 +231,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bEA-ND-3uZ" userLabel="Background Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="tapBackground:" destination="BYZ-38-t0r" id="QKR-Hu-Rfk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1291.304347826087" y="-1167.1875"/>
         </scene>
