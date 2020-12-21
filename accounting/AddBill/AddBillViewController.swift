@@ -9,6 +9,8 @@
 import UIKit
 
 class AddBillViewController: UIViewController {
+    // 储存将要返回的bill
+    var editBill: Bill?
 
     @IBOutlet weak var expenditrueView: UIView!
     @IBOutlet weak var incomeView: UIView!

@@ -24,7 +24,18 @@ class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "billListCell", for: indexPath) as! BillListTableViewCell
         
-        cell.amountText.text = "\(billList[indexPath.section][indexPath.row].amount)"
+        if billList[indexPath.section][indexPath.row].amount > 0 {
+            if #available(iOS 13.0, *) {
+                cell.amountText.textColor = UIColor.link
+                cell.amountText.text = "+\(billList[indexPath.section][indexPath.row].amount)"
+            } else {
+                print("OS Version not support")
+            }
+        } else {
+            cell.amountText.textColor = UIColor.red
+            cell.amountText.text = "\(billList[indexPath.section][indexPath.row].amount)"
+        }
+        
         cell.accountText.text = billList[indexPath.section][indexPath.row].account
         cell.typeText.text = billList[indexPath.section][indexPath.row].type
         

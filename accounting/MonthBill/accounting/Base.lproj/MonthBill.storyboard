@@ -86,9 +86,8 @@
                                     <constraint firstAttribute="trailing" secondItem="O37-on-hYJ" secondAttribute="trailing" id="x8Y-gk-QrX"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-cL-SNP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vE-cL-SNP">
                                 <rect key="frame" x="0.0" y="208" width="414" height="654"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="billListCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billListCell" id="fCg-dp-YRS" customClass="BillListTableViewCell" customModule="accounting" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -161,7 +160,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkT-CN-nrM">
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkT-CN-nrM">
                                 <rect key="frame" x="0.0" y="208" width="414" height="654"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </pickerView>
@@ -191,9 +190,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="QaJ-D8-NA7">
                             <connections>
-                                <segue destination="wfk-XH-Haa" kind="popoverPresentation" popoverAnchorBarButtonItem="QaJ-D8-NA7" id="eOL-5b-l2m">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="PeV-Vd-hty" kind="show" id="mpA-tq-nIH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -218,6 +215,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVH-Mz-ToW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-564" y="-1167"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="04g-fp-8QX">
+            <objects>
+                <viewController id="PeV-Vd-hty" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f1c-YP-6OY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gks-4t-ghw">
+                                <rect key="frame" x="184" y="409" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="gGe-eo-bDq" kind="unwind" unwindAction="addBillWithSegue:" id="CwX-7h-lnH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4ml-0D-vUg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eOZ-aP-sjl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRR-ee-HBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gGe-eo-bDq" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-75" y="-1167"/>
         </scene>
         <!--本月账单-->
         <scene sceneID="DBh-uk-Zor">
