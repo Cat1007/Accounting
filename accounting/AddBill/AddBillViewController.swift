@@ -22,6 +22,8 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     var selectType:String = String()
     var account:String = String()
     var remarks:String = String()
+    var amount:Float = Float()
+    var date:String = String()
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var selectTypeView: UICollectionView!
@@ -29,6 +31,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     @IBOutlet weak var timeSelect: UIDatePicker!
     @IBOutlet weak var accountSelect: UIPickerView!
     @IBOutlet weak var remarksTextField: UITextView!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated:true,completion:nil)
@@ -37,6 +40,14 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         accountSelect.isHidden = !accountSelect.isHidden
     }
     
+    @IBAction func saveButton(_ sender: UIButton) {
+        let rawDate = timeSelect.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        date = dateFormatter.string(from: rawDate)
+        amount = Float(amountLabel.text!)!
+        
+        }
     override func viewDidLoad() {
         super.viewDidLoad()
         selectTypeView.delegate = self
@@ -45,6 +56,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         accountSelect.dataSource = self
         amountTextField.delegate = self
         remarksTextField.delegate = self
+        
         //设置分类只能单选
         selectTypeView.allowsMultipleSelection = false
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 20, height: 20)
@@ -59,13 +71,21 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         accountSelect.isHidden = true
         account = accountArray[0]
         accountLabel.text = account
+        
+        //金额输入框样式
         amountLabel.textColor = UIColor.systemRed
         amountTextField.keyboardType = UIKeyboardType.decimalPad
+        //金额输入监听事件
         amountTextField.addTarget(self, action: #selector(amountTextChanged(_:)), for: .allEditingEvents)
+        
+        //备注样式
         remarksTextField.layer.borderWidth = 1
         remarksTextField.layer.borderColor = UIColor(red:234/255,green:234/255,blue:234/255,alpha:1).cgColor
         remarksTextField.layer.cornerRadius = 6
         remarksTextField.returnKeyType = UIReturnKeyType.done
+        
+        //保存按钮样式
+        saveButton.tintColor = UIColor.systemRed
         // Do any additional setup after loading the view.
     }
     
@@ -74,6 +94,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         case 0:
             selectArray = expenditureArray
             amountLabel.textColor = UIColor.systemRed
+            saveButton.tintColor = UIColor.systemRed
             self.selectTypeView.reloadData()
 //            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
@@ -82,6 +103,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         case 1:
             selectArray = incomeArray
             amountLabel.textColor = UIColor.systemGreen
+            saveButton.tintColor = UIColor.systemGreen
             self.selectTypeView.reloadData()
 //            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
@@ -154,6 +176,15 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
 //    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        //退格单独处理
+        if string == "" {
+            return true
+        }
+        //到达上限
+        if amountTextField.text!.count == 8 {
+            return false
+        }
+        
         let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         print(newString)
         //正则表达式 最多保留两位小数

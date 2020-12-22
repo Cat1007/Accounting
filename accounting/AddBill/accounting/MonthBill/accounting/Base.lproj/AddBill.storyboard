@@ -108,11 +108,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIb-Ev-0dj">
-                                <rect key="frame" x="157" y="812" width="100" height="30"/>
+                                <rect key="frame" x="157" y="800" width="100" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Iq6-gQ-RmK"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="rf3-Y1-YZ3" eventType="touchUpInside" id="evZ-jN-wkn"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-pR-T1C">
                                 <rect key="frame" x="92" y="309" width="302" height="34"/>
@@ -225,6 +229,7 @@
                         <outlet property="amountLabel" destination="0Ib-r6-o2e" id="ffJ-lP-hBj"/>
                         <outlet property="amountTextField" destination="vbj-W2-XOT" id="XQj-rn-ALt"/>
                         <outlet property="remarksTextField" destination="utK-Ib-Qxj" id="SKw-bC-q1d"/>
+                        <outlet property="saveButton" destination="gIb-Ev-0dj" id="GHd-Qr-9f9"/>
                         <outlet property="segmentedControl" destination="Uff-NF-erl" id="PtA-IF-cww"/>
                         <outlet property="selectTypeView" destination="czn-ir-w43" id="yaJ-Uu-WAf"/>
                         <outlet property="timeSelect" destination="dUi-pR-T1C" id="eLz-hw-udQ"/>
