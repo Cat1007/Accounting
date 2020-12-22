@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource {
+class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource,UITextViewDelegate {
     
     
     // 储存将要返回的bill
@@ -21,13 +21,15 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     var selectArray:Array = Array<String>()
     var selectType:String = String()
     var account:String = String()
-    
+    var remarks:String = String()
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var selectTypeView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var timeSelect: UIDatePicker!
     @IBOutlet weak var accountSelect: UIPickerView!
+    @IBOutlet weak var remarksTextField: UITextView!
+    @IBOutlet weak var amountTextField: UITextField!
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated:true,completion:nil)
     }
@@ -41,7 +43,8 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         selectTypeView.dataSource = self
         accountSelect.delegate = self
         accountSelect.dataSource = self
-        
+        amountTextField.delegate = self
+        remarksTextField.delegate = self
         //设置分类只能单选
         selectTypeView.allowsMultipleSelection = false
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).estimatedItemSize = CGSize(width: 20, height: 20)
@@ -57,6 +60,12 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         account = accountArray[0]
         accountLabel.text = account
         amountLabel.textColor = UIColor.systemRed
+        amountTextField.keyboardType = UIKeyboardType.decimalPad
+        amountTextField.addTarget(self, action: #selector(amountTextChanged(_:)), for: .allEditingEvents)
+        remarksTextField.layer.borderWidth = 1
+        remarksTextField.layer.borderColor = UIColor(red:234/255,green:234/255,blue:234/255,alpha:1).cgColor
+        remarksTextField.layer.cornerRadius = 6
+        remarksTextField.returnKeyType = UIReturnKeyType.done
         // Do any additional setup after loading the view.
     }
     
@@ -138,6 +147,70 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         accountLabel.text = account
         print(account)
     }
+    
+    // MARK: - TextField
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        print(newString)
+        //正则表达式 最多保留两位小数
+//        let expression = "^(([1-9]{1}\\d*)|(0{1}))(\\.\\d{1,2})?$"
+        let expression = "^[0-9]*(?:\\.[0-9]{0,2})?$"
+        let regex = try! NSRegularExpression(pattern: expression, options: NSRegularExpression.Options.caseInsensitive)
+        let result = regex.matches(in: newString, options: [], range: NSMakeRange(0, newString.count))
+        print(result)
+        if result.count == 0{
+            return false
+        }else{
+            if newString != ""{
+                if newString[newString.startIndex] == "."{
+                    amountTextField.text = "0"
+                    print(newString)
+                }
+                if newString[newString.index(before: newString.endIndex)] == "."{
+                    print(newString)
+                }
+            }
+            return true
+        }
+    }
+    
+    //监听金额
+    @objc func amountTextChanged(_ textField:UITextField){
+        amountLabel.text = (textField.text == "") ? "0": amountTextField.text
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        amountTextField.resignFirstResponder()
+        remarksTextField.resignFirstResponder()
+    }
+    
+    // MARK: - TextView
+    func textViewDidChange(_ textView: UITextView) {
+        remarks = remarksTextField.text
+        return
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        //退格单独处理
+        if text == ""{
+            return true
+        }
+        //return按钮
+        if text == "\n"{
+            self.view?.endEditing(false)
+            return true
+        }
+        //到达上限
+        if remarksTextField.text.count == 15 {
+            return false
+        }
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
