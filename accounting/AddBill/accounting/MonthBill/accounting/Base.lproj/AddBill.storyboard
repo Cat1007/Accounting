@@ -84,8 +84,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-32.15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ib-r6-o2e">
-                                <rect key="frame" x="291" y="246" width="103" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ib-r6-o2e">
+                                <rect key="frame" x="371.5" y="246" width="22.5" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -152,6 +152,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93336755039999997" green="0.93324744699999995" blue="0.93725579979999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Vu8-Dc-Z6Q" firstAttribute="centerX" secondItem="M7v-IS-jvB" secondAttribute="centerX" id="KeJ-eB-8BT"/>
                                     <constraint firstAttribute="width" constant="150" id="Nt6-Ia-FYs"/>
@@ -163,9 +164,13 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="chB-GY-Bnf" appends="YES" id="DtK-dC-qNa"/>
+                                </connections>
                             </view>
-                            <pickerView hidden="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-HM-3a3">
-                                <rect key="frame" x="0.0" y="596" width="414" height="216"/>
+                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-HM-3a3">
+                                <rect key="frame" x="0.0" y="407" width="414" height="435"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -201,7 +206,8 @@
                             <constraint firstItem="czn-ir-w43" firstAttribute="leading" secondItem="Zmg-xz-WSR" secondAttribute="leading" id="jhc-Oa-Ewy"/>
                             <constraint firstItem="M7v-IS-jvB" firstAttribute="leading" secondItem="3qL-rK-6qm" secondAttribute="trailing" constant="20" id="luT-Su-GvU"/>
                             <constraint firstItem="vbj-W2-XOT" firstAttribute="top" secondItem="M7v-IS-jvB" secondAttribute="bottom" constant="15" id="n9l-Ln-3mR"/>
-                            <constraint firstItem="gIb-Ev-0dj" firstAttribute="top" secondItem="cVC-HM-3a3" secondAttribute="bottom" id="txQ-f1-z5j"/>
+                            <constraint firstItem="Zmg-xz-WSR" firstAttribute="bottom" secondItem="cVC-HM-3a3" secondAttribute="bottom" constant="20" id="tvO-1z-ml3"/>
+                            <constraint firstItem="cVC-HM-3a3" firstAttribute="top" secondItem="M7v-IS-jvB" secondAttribute="bottom" constant="15" id="u3r-la-1A0"/>
                             <constraint firstItem="Zmg-xz-WSR" firstAttribute="trailing" secondItem="0Ib-r6-o2e" secondAttribute="trailing" constant="20" id="utH-ld-u9W"/>
                             <constraint firstItem="RG4-U2-iw5" firstAttribute="leading" secondItem="Zmg-xz-WSR" secondAttribute="leading" constant="20" id="vKe-yU-u9T"/>
                             <constraint firstItem="GSM-we-rjp" firstAttribute="centerY" secondItem="dUi-pR-T1C" secondAttribute="centerY" id="vT6-fF-EOR"/>
@@ -210,14 +216,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountLabel" destination="Vu8-Dc-Z6Q" id="rxP-oo-gQc"/>
                         <outlet property="accountSelect" destination="cVC-HM-3a3" id="dy0-TV-c14"/>
-                        <outlet property="accountSelectButton" destination="M7v-IS-jvB" id="whA-Tw-Kp2"/>
+                        <outlet property="amountLabel" destination="0Ib-r6-o2e" id="ffJ-lP-hBj"/>
                         <outlet property="segmentedControl" destination="Uff-NF-erl" id="PtA-IF-cww"/>
                         <outlet property="selectTypeView" destination="czn-ir-w43" id="yaJ-Uu-WAf"/>
                         <outlet property="timeSelect" destination="dUi-pR-T1C" id="eLz-hw-udQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5o-zN-H2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="chB-GY-Bnf">
+                    <connections>
+                        <action selector="accountTap:" destination="rf3-Y1-YZ3" id="qQO-tB-1IU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-500.00000000000006" y="-1142.4107142857142"/>
         </scene>
