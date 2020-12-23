@@ -85,7 +85,7 @@
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                         <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="OaM-5E-Jo3"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="pdI-K7-QQ2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,9 +127,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-p2-ggB">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
-                                        <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="NIa-1y-ERx"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,9 +167,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry8-yk-TNU">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
-                                        <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="y22-oe-ISf"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -291,29 +285,8 @@
                             <constraint firstItem="MjU-vn-HO8" firstAttribute="centerX" secondItem="8Yf-9R-ZCc" secondAttribute="centerX" id="hZm-ra-KDz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="emw-Jt-uMv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="owT-2r-whs">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="D3c-V3-WtH">
-                                <rect key="frame" x="16" y="4.6666666666666679" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="返回"/>
-                            </button>
-                            <connections>
-                                <action selector="exit:" destination="VYj-ck-bv3" id="i8z-De-Dco"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="awl-hm-67a">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ou4-3z-wQc">
-                                <rect key="frame" x="276" y="5" width="83" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="保存"/>
-                            </button>
-                            <connections>
-                                <action selector="save:" destination="VYj-ck-bv3" id="hds-zN-aX9"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="dHV-iS-NGX">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="0zQ-AM-EqV"/>
                     </navigationItem>
                     <connections>
                         <outlet property="brand" destination="GIy-rp-bqa" id="Bls-rY-PHU"/>
@@ -326,9 +299,6 @@
             <point key="canvasLocation" x="-359" y="185"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="y22-oe-ISf"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
