@@ -116,6 +116,7 @@
                                 <state key="normal" title="保存"/>
                                 <connections>
                                     <action selector="saveButton:" destination="rf3-Y1-YZ3" eventType="touchUpInside" id="evZ-jN-wkn"/>
+                                    <segue destination="etM-zr-MN1" kind="unwind" unwindAction="addBillWithSegue:" id="7ic-RX-pnu"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="dUi-pR-T1C">
@@ -236,6 +237,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5o-zN-H2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="etM-zr-MN1" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="chB-GY-Bnf">
                     <connections>
                         <action selector="accountTap:" destination="rf3-Y1-YZ3" id="qQO-tB-1IU"/>

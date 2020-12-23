@@ -23,7 +23,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     var account:String = String()
     var remarks:String = String()
     var amount:Float = Float()
-    var date:String = String()
+    var date:Date = Date()
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var selectTypeView: UICollectionView!
@@ -41,13 +41,31 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        let rawDate = timeSelect.date
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日"
-        date = dateFormatter.string(from: rawDate)
+//        date = timeSelect.date
+////        let dateFormatter = DateFormatter()
+////        dateFormatter.dateFormat = "yyyy年MM月dd日"
+////        date = dateFormatter.string(from: rawDate)
+//        amount = Float(amountLabel.text!)!
+//        if remarks == ""{
+//            editBill = Bill(amount: amount, date: date, type: selectType, account: account, remark: nil)
+//        }else{
+//            editBill = Bill(amount: amount, date: date, type: selectType, account: account, remark: remarks)
+//        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        date = timeSelect.date
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy年MM月dd日"
+//        date = dateFormatter.string(from: rawDate)
         amount = Float(amountLabel.text!)!
-        
+        if remarks == ""{
+            editBill = Bill(amount: amount, date: date, type: selectType, account: account, remark: nil)
+        }else{
+            editBill = Bill(amount: amount, date: date, type: selectType, account: account, remark: remarks)
         }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectTypeView.delegate = self
@@ -68,6 +86,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         (selectTypeView.collectionViewLayout as! UICollectionViewFlowLayout).sectionInset = UIEdgeInsets(top: 5,left: 20,bottom: 0,right: 20)
         
         selectArray = expenditureArray
+        selectType = selectArray[0]
         accountSelect.isHidden = true
         account = accountArray[0]
         accountLabel.text = account
