@@ -12,11 +12,17 @@ class AssetViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initAccount()
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var assetList: UITableView!
+    @IBOutlet weak var salaryCard: UILabel!
+    @IBOutlet weak var Wechat: UILabel!
+    @IBOutlet weak var Alipay: UILabel!
+    /*关于三个label的加减和初始化*/
+    func initAccount(){
+        
+    }
     
     /*
     // MARK: - Navigation

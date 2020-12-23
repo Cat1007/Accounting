@@ -16,7 +16,35 @@ class EditAssetViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var brand: UILabel!
+    @IBOutlet weak var initialAccount: UITextField!
+    @IBAction func save(_ sender: Any) {
+        initialAccount.text = initialAccount.text!
+    }
+    @IBAction func exit(_ sender: Any) {
+    }
+    /*
+    //保存
+    func saveContacts(){
+        let success = NSKeyedArchiver.archiveRootObject(initialAccount, toFile: userPath)
+        if !success{
+            print("failed...")
+        }
+    }
+    
+    //加载
+    func loadContacts(){
+        if let initAccount = NSKeyedUnarchiver.unarchiveObject(withFile: contactInfo.userPath) as?
+            [contactInfo]{
+            contactList = contacts
+            print("load file successful")
+        }
+    }
+     */
+    
+    
+    
     /*
     // MARK: - Navigation
 
