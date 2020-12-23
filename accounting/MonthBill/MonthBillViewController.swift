@@ -219,12 +219,10 @@ class MainViewController: UIViewController {
     
     // 添加账单后返回入口
     @IBAction func addBill(segue: UIStoryboardSegue) {
-//        if let addBillVC = segue.source as? AddBillViewController, let editBill  = addBillVC.editBill {
-//
-//        }
-        let tempBill = Bill(amount: 9.0, date: Date(), type: "测试", account: "微信", remark: "添加测试")
-        billList.append(tempBill)
-        arrangeBill()
+        if let addBillVC = segue.source as? AddBillViewController, let editBill  = addBillVC.editBill {
+            billList.append(editBill)
+            arrangeBill()
+        }
     }
 
     /*
