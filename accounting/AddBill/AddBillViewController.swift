@@ -103,8 +103,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         remarksTextField.layer.cornerRadius = 6
         remarksTextField.returnKeyType = UIReturnKeyType.done
         
-        //保存按钮样式
-        saveButton.tintColor = UIColor.systemRed
+        saveButton.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
@@ -113,7 +112,6 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         case 0:
             selectArray = expenditureArray
             amountLabel.textColor = UIColor.systemRed
-            saveButton.tintColor = UIColor.systemRed
             self.selectTypeView.reloadData()
 //            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
@@ -122,7 +120,6 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         case 1:
             selectArray = incomeArray
             amountLabel.textColor = UIColor.systemGreen
-            saveButton.tintColor = UIColor.systemGreen
             self.selectTypeView.reloadData()
 //            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
@@ -215,6 +212,14 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         if result.count == 0{
             return false
         }else{
+            if amountTextField.text == "0"{
+                if newString == "0."{
+                    return true
+                }
+                amountTextField.text = String(newString[newString.index(before: newString.endIndex)])
+                amountLabel.text = amountTextField.text
+                return false
+            }
             if newString != ""{
                 if newString[newString.startIndex] == "."{
                     amountTextField.text = "0"
@@ -236,6 +241,11 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         amountTextField.resignFirstResponder()
         remarksTextField.resignFirstResponder()
+        if(amountLabel.text! == "0" || amountLabel.text! == "0." || amountLabel.text! == "0.0" ){
+            saveButton.isEnabled = false
+        }else{
+            saveButton.isEnabled = true
+        }
     }
     
     // MARK: - TextView
