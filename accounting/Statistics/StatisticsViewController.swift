@@ -10,21 +10,30 @@ import UIKit
 
 class StatisticsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var billList: [Bill] = [Bill]()
+    var sortedList: Array = Array<Any>()
+    
     //返回对应的cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayListCell", for: indexPath) as! DayListTableViewCell
+        //此处绑定cell的文本和分类后列表项的数据
+        cell.balanceText.text = "1243"
+        cell.dateText.text = "1234"
+        cell.expandText.text = "1245"
+        cell.incomeText.text = "1243"
         return cell
     }
     
     //返回小节标题
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return " "
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return " "
+//    }
 
-    // 返回列表项的个数
+    //返回列表项的个数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 9
     }
+    
     
     @IBOutlet weak var dayTableView: UITableView!
     
@@ -32,7 +41,7 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         
         for _ in 0 ..< 5 {
-            
+          
         }
         
         dayTableView.delegate = self
