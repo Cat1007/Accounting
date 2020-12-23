@@ -20,6 +20,8 @@
 		16636A15258F3A5600E98371 /* BillListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16636A14258F3A5600E98371 /* BillListController.swift */; };
 		16D49C452589C292007CF1A9 /* AddBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D49C432589C292007CF1A9 /* AddBill.storyboard */; };
 		16E9A032258AF19A009E9313 /* UTCTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E9A031258AF19A009E9313 /* UTCTime.swift */; };
+		1816283A2592E1F2003C4C14 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181628392592E1F2003C4C14 /* AssetViewController.swift */; };
+		181628572592F07C003C4C14 /* EditAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181628562592F07C003C4C14 /* EditAssetViewController.swift */; };
 		1873F699258B023B00E4763E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873F68C258AEF5700E4763E /* StatisticsViewController.swift */; };
 		1873F6A4258B035100E4763E /* DayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873F691258AF0C800E4763E /* DayListTableViewCell.swift */; };
 		18FCF7822581C28C0084241B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FCF7812581C28C0084241B /* AppDelegate.swift */; };
@@ -62,6 +64,8 @@
 		16636A14258F3A5600E98371 /* BillListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListController.swift; sourceTree = "<group>"; };
 		16D49C442589C292007CF1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/MonthBill/accounting/Base.lproj/AddBill.storyboard; sourceTree = "<group>"; };
 		16E9A031258AF19A009E9313 /* UTCTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTime.swift; sourceTree = "<group>"; };
+		181628392592E1F2003C4C14 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		181628562592F07C003C4C14 /* EditAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetViewController.swift; sourceTree = "<group>"; };
 		1873F68C258AEF5700E4763E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		1873F691258AF0C800E4763E /* DayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayListTableViewCell.swift; sourceTree = "<group>"; };
 		18FCF77E2581C28C0084241B /* accounting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accounting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				165325CE2589BBE200404091 /* AssetManagement.storyboard */,
+				181628392592E1F2003C4C14 /* AssetViewController.swift */,
+				181628562592F07C003C4C14 /* EditAssetViewController.swift */,
 			);
 			path = AssetManagement;
 			sourceTree = "<group>";
@@ -357,7 +363,9 @@
 				165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */,
 				16636A10258F2F7000E98371 /* MonthPickerController.swift in Sources */,
 				0CAA63BB2589D21400F33DE4 /* AddBillViewController.swift in Sources */,
+				181628572592F07C003C4C14 /* EditAssetViewController.swift in Sources */,
 				16636A15258F3A5600E98371 /* BillListController.swift in Sources */,
+				1816283A2592E1F2003C4C14 /* AssetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
