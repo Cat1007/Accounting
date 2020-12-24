@@ -13,6 +13,8 @@ class AssetViewController: UIViewController {
     private var editAccount: Int = 0
     private var accounts = [AssetAccount]()
     
+    private var billList = [Bill]()
+    
 
     @IBOutlet weak var bank: UILabel!
     @IBOutlet weak var wechat: UILabel!
@@ -22,8 +24,15 @@ class AssetViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initAccount()
+//        loadBills()
+//        initAccount()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadBills()
+        initAccount()
     }
     
     // 初始化账号
@@ -33,9 +42,7 @@ class AssetViewController: UIViewController {
             // 进行对应余额的计算
             
             // 修改页面显示
-            bank.text = String(accounts[0].balance)
-            wechat.text = String(accounts[1].balance)
-            alipay.text = String(accounts[2].balance)
+            updatePage()
             print("load account success")
         } else {
             // 新建三个账号
@@ -59,11 +66,39 @@ class AssetViewController: UIViewController {
     
     // 更新页面元素
     func updatePage() {
-        // 修改页面显示
-        bank.text = String(accounts[0].balance)
-        wechat.text = String(accounts[1].balance)
-        alipay.text = String(accounts[2].balance)
+        var bankShow = accounts[0].balance
+        var wechatShow = accounts[1].balance
+        var aliShow = accounts[2].balance
         
+        // 修改页面显示
+        for bill in billList {
+            switch bill.account {
+            case "银行卡":
+                if bill.date.compare(accounts[0].lastUpdateTime).rawValue == 1 { bankShow  += bill.amount }
+            case "微信":
+                if bill.date.compare(accounts[1].lastUpdateTime).rawValue == 1 { wechatShow  += bill.amount }
+            case "支付宝":
+                if bill.date.compare(accounts[2].lastUpdateTime).rawValue == 1 { aliShow  += bill.amount }
+            default: break
+            }
+        }
+        
+        var total = bankShow  + wechatShow + aliShow
+        
+        bank.text = String(bankShow)
+        wechat.text = String(wechatShow)
+        alipay.text = String(aliShow)
+        totalBalance.text = String(total)
+    }
+    
+    // 拉取本地订单
+    func loadBills() {
+        if let bills = NSKeyedUnarchiver.unarchiveObject(withFile: Bill.billPath) as? [Bill] {
+            billList = bills
+            print("load bills success")
+        } else {
+            print("load bills fail")
+        }
     }
     
     @IBAction func editBankCard(_ sender: Any) { editAccount = 0 }
