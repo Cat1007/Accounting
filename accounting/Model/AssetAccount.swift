@@ -16,7 +16,7 @@ class AssetAccount: NSObject, NSCoding {
     }
 
     required init?(coder: NSCoder) {
-        self.balance = coder.decodeObject(forKey: "balance") as! Float
+        self.balance = coder.decodeFloat(forKey: "balance")
         self.name = coder.decodeObject(forKey: "name") as! String
         self.lastUpdateTime = coder.decodeObject(forKey: "lastUpdateTime") as! Date
     }

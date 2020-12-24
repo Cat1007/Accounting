@@ -108,7 +108,7 @@ class MainViewController: UIViewController {
         // 整理每日账单
         var billSection = [[Bill]]()
         // 初始化日期数组
-        for _ in 1 ..< 32 { billSection.append([Bill]()) }
+        for _ in 1 ... 32 { billSection.append([Bill]()) }
         for bill in billList.reversed() {
             let time = UTCTime(date: bill.date)
             // 检索指定月份的账单

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MGM-Gi-9wc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MGM-Gi-9wc">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--资产管理-->
         <scene sceneID="nkq-XH-YIk">
             <objects>
                 <navigationController id="MGM-Gi-9wc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LRM-J9-zTZ"/>
+                    <tabBarItem key="tabBarItem" title="资产管理" image="books.vertical.fill" catalog="system" id="L75-Zo-Bmo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zaV-d0-U4p">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,12 +63,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-Zq-1cM">
                                 <rect key="frame" x="20" y="258" width="335" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-Cm-iJd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BankCard.png" translatesAutoresizingMaskIntoConstraints="NO" id="LzF-Cm-iJd">
                                         <rect key="frame" x="20" y="35" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="eNL-i0-o2X"/>
                                             <constraint firstAttribute="width" constant="80" id="htF-w8-1wL"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zec-qm-e8s">
                                         <rect key="frame" x="265" y="62" width="50" height="26"/>
@@ -75,7 +81,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工资卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYj-M2-epy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYj-M2-epy">
                                         <rect key="frame" x="120" y="62" width="65" height="26"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
@@ -85,7 +91,8 @@
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                         <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="pdI-K7-QQ2"/>
+                                            <action selector="editBankCard:" destination="d6D-kW-KVq" eventType="touchUpInside" id="pNi-3n-jNB"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="Pkg-og-DHG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -101,16 +108,26 @@
                                     <constraint firstItem="LzF-Cm-iJd" firstAttribute="centerY" secondItem="hd3-Zq-1cM" secondAttribute="centerY" id="yp0-PA-nal"/>
                                     <constraint firstItem="FzZ-qP-uNX" firstAttribute="top" secondItem="hd3-Zq-1cM" secondAttribute="top" constant="20" id="zOL-WF-ow9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlR-ij-iXa">
                                 <rect key="frame" x="20" y="428" width="335" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2pd-jB-bYd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WEIXIN.png" translatesAutoresizingMaskIntoConstraints="NO" id="2pd-jB-bYd">
                                         <rect key="frame" x="20" y="35" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Wdu-nM-5QD"/>
                                             <constraint firstAttribute="width" constant="80" id="ldM-D3-duT"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-8T-wKg">
                                         <rect key="frame" x="265" y="62" width="50" height="26"/>
@@ -127,6 +144,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-p2-ggB">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editWechat:" destination="d6D-kW-KVq" eventType="touchUpInside" id="VI0-sU-ONQ"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="sfV-vz-e7I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,16 +162,26 @@
                                     <constraint firstAttribute="trailing" secondItem="Db7-8T-wKg" secondAttribute="trailing" constant="20" id="uHm-Hl-MlS"/>
                                     <constraint firstAttribute="height" constant="150" id="ueC-eP-McH"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxK-gC-pU0">
                                 <rect key="frame" x="20" y="599" width="335" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97U-V9-whN">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AliPay.png" translatesAutoresizingMaskIntoConstraints="NO" id="97U-V9-whN">
                                         <rect key="frame" x="20" y="35" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Db3-Og-7UT"/>
                                             <constraint firstAttribute="width" constant="80" id="TkR-Bf-BwF"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGS-vK-8FD">
                                         <rect key="frame" x="265" y="62" width="50" height="26"/>
@@ -167,6 +198,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry8-yk-TNU">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <action selector="editAlipay:" destination="d6D-kW-KVq" eventType="touchUpInside" id="oPe-m5-OTa"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="21a-ZW-9aG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -181,6 +216,11 @@
                                     <constraint firstItem="97U-V9-whN" firstAttribute="leading" secondItem="jxK-gC-pU0" secondAttribute="leading" constant="20" id="SSA-BC-eGH"/>
                                     <constraint firstAttribute="trailing" secondItem="hGS-vK-8FD" secondAttribute="trailing" constant="20" id="SlZ-tm-X1a"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TqA-eN-gjp"/>
@@ -202,9 +242,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="资产管理" id="9Ie-Ob-3LW"/>
                     <connections>
-                        <outlet property="Alipay" destination="hGS-vK-8FD" id="vye-Kf-P0E"/>
-                        <outlet property="Wechat" destination="Db7-8T-wKg" id="amB-AM-h5H"/>
-                        <outlet property="salaryCard" destination="Zec-qm-e8s" id="MHK-PS-w9t"/>
+                        <outlet property="alipay" destination="hGS-vK-8FD" id="XlC-9G-WyT"/>
+                        <outlet property="bank" destination="Zec-qm-e8s" id="jOA-b1-V2N"/>
+                        <outlet property="wechat" destination="Db7-8T-wKg" id="ikW-JJ-UvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKf-fU-bJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -286,20 +326,32 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dHV-iS-NGX">
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="0zQ-AM-EqV"/>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="0zQ-AM-EqV">
+                            <connections>
+                                <segue destination="JNx-Is-gQe" kind="unwind" unwindAction="saveAccountChangeWithSegue:" id="uUY-ab-yzA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="brand" destination="GIy-rp-bqa" id="Bls-rY-PHU"/>
-                        <outlet property="icon" destination="ICg-WF-xId" id="abB-jY-eWl"/>
-                        <outlet property="initialAccount" destination="eJf-SG-6Wc" id="9ms-AY-AlC"/>
+                        <outlet property="accountName" destination="GIy-rp-bqa" id="UXO-6n-l4m"/>
+                        <outlet property="balanceField" destination="eJf-SG-6Wc" id="cem-pJ-eFd"/>
+                        <outlet property="saveBtn" destination="0zQ-AM-EqV" id="txT-yP-hbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cly-gP-2NO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JNx-Is-gQe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-359" y="185"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sfV-vz-e7I"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="AliPay.png" width="400" height="400"/>
+        <image name="BankCard.png" width="500" height="501"/>
+        <image name="WEIXIN.png" width="350" height="350"/>
+        <image name="books.vertical.fill" catalog="system" width="128" height="100"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -8,7 +8,16 @@
 
 import UIKit
 
-class AssetViewController: UIViewController{
+class AssetViewController: UIViewController {
+    // 0是银行卡 1是微信 2是支付宝
+    private var editAccount: Int = 0
+    private var accounts = [AssetAccount]()
+    
+
+    @IBOutlet weak var bank: UILabel!
+    @IBOutlet weak var wechat: UILabel!
+    @IBOutlet weak var alipay: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,22 +25,65 @@ class AssetViewController: UIViewController{
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var salaryCard: UILabel!
-    @IBOutlet weak var Wechat: UILabel!
-    @IBOutlet weak var Alipay: UILabel!
-    /*关于三个label的加减和初始化*/
-    func initAccount(){
-        
+    // 初始化账号
+    func initAccount() {
+        if let localAccounts = NSKeyedUnarchiver.unarchiveObject(withFile: AssetAccount.assetPath) as? [AssetAccount] {
+            accounts = localAccounts
+            // 进行对应余额的计算
+            
+            // 修改页面显示
+            bank.text = String(accounts[0].balance)
+            wechat.text = String(accounts[1].balance)
+            alipay.text = String(accounts[2].balance)
+            print("load account success")
+        } else {
+            // 新建三个账号
+            accounts.append(AssetAccount(name: "银行卡", balance: 0))
+            accounts.append(AssetAccount(name: "微信", balance: 0))
+            accounts.append(AssetAccount(name: "支付宝", balance: 0))
+            saveAccount()
+            updatePage()
+        }
     }
     
-    /*
+    // 保存账号更改
+    func saveAccount() {
+        let success = NSKeyedArchiver.archiveRootObject(accounts, toFile: AssetAccount.assetPath)
+        if !success {
+            print("save accounts failed")
+        } else {
+            print("save accounts success")
+        }
+    }
+    
+    // 更新页面元素
+    func updatePage() {
+        // 修改页面显示
+        bank.text = String(accounts[0].balance)
+        wechat.text = String(accounts[1].balance)
+        alipay.text = String(accounts[2].balance)
+    }
+    
+    @IBAction func editBankCard(_ sender: Any) { editAccount = 0 }
+    
+    @IBAction func editWechat(_ sender: Any) { editAccount = 1 }
+    
+    @IBAction func editAlipay(_ sender: Any) { editAccount = 2 }
+    
+    @IBAction func saveAccountChange(segue: UIStoryboardSegue) {
+        if let sourceVC = segue.source as? EditAssetViewController, let afterEditAsset  = sourceVC.toEditAccount{
+            accounts[editAccount] = afterEditAsset
+            updatePage()
+            saveAccount()
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let desViewController = segue.destination as? EditAssetViewController {
+            desViewController.toEditAccount = accounts[editAccount]
+        }
     }
-    */
-
 }
