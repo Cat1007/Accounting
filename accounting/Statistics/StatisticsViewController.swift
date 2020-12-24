@@ -24,8 +24,17 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayListCell", for: indexPath) as! DayListTableViewCell
         //此处绑定cell的文本和分类后列表项的数据
         cell.balanceText.text = String(sortedList[indexPath.row].balance)
+        if(sortedList[indexPath.row].balance < 0){
+            cell.balanceText.textColor = UIColor.systemRed
+        }else if(sortedList[indexPath.row].balance > 0){
+            cell.balanceText.textColor = UIColor.systemGreen
+        }
         cell.dateText.text = sortedList[indexPath.row].date
-        cell.expandText.text = String(-sortedList[indexPath.row].expenditure)
+        if(sortedList[indexPath.row].expenditure != 0){
+            cell.expandText.text = String(-sortedList[indexPath.row].expenditure)
+        }else{
+            cell.expandText.text = String(sortedList[indexPath.row].expenditure)
+        }
         cell.incomeText.text = String(sortedList[indexPath.row].income)
         return cell
     }
@@ -55,20 +64,44 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
         
         dayTableView.delegate = self
         dayTableView.dataSource = self
+//        // 拉取本地列表
+//        loadBillFromLocal()
+//        // 分类原始数据
+//        arrangeBill()
+//        // 生成按日分类列表
+//        sortBill()
+//        if(monthExpenditure == 0){
+//            headerExpend.text = String(monthExpenditure)
+//        }else{
+//            headerExpend.text = String(-monthExpenditure)
+//        }
+//        headerIncome.text = String(monthIncome)
+//        headerBalance.text = String(format: "%.2f",monthExpenditure + monthIncome)
+//        headerDailyExpend.text = String(format: "%.2f",-dailyExpenditure)
+//        dailyExpend.text = String(format: "%.2f",-dailyExpenditure)
+//        income.text = String(monthIncome)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         // 拉取本地列表
         loadBillFromLocal()
         // 分类原始数据
         arrangeBill()
         // 生成按日分类列表
         sortBill()
-        headerExpend.text = String(-monthExpenditure)
+        self.dayTableView.reloadData()
+        if(monthExpenditure == 0){
+            headerExpend.text = String(monthExpenditure)
+        }else{
+            headerExpend.text = String(-monthExpenditure)
+        }
         headerIncome.text = String(monthIncome)
-        headerBalance.text = String(monthExpenditure + monthIncome)
+        headerBalance.text = String(format: "%.2f",monthExpenditure + monthIncome)
         headerDailyExpend.text = String(format: "%.2f",-dailyExpenditure)
         dailyExpend.text = String(format: "%.2f",-dailyExpenditure)
         income.text = String(monthIncome)
+
     }
-    
     func loadBillFromLocal() {
         if let bills = NSKeyedUnarchiver.unarchiveObject(withFile: Bill.billPath) as? [Bill] {
             billList = bills
@@ -80,6 +113,7 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
     
     func arrangeBill(){
         // 初始化日期数组
+        arrangedBill.removeAll()
         for _ in 1 ... 32 { arrangedBill.append([Bill]()) }
         for bill in billList.reversed() {
             let time = UTCTime(date: bill.date)
@@ -89,6 +123,9 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func sortBill(){
+        sortedList.removeAll()
+        monthIncome = 0
+        monthExpenditure = 0
         var day:Int = Int()
         let y = currentTime.year
         switch currentTime.month {
