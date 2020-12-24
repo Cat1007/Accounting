@@ -8,6 +8,7 @@
 
 import Foundation
 class Bill: NSObject, NSCoding {
+    
     static let billPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first! +
         "/bills.data"
     
