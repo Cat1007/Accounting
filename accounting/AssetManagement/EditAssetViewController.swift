@@ -9,17 +9,13 @@
 import UIKit
 
 class EditAssetViewController: UIViewController {
+    var toEditAccount: AssetAccount?
 
     let toeditAsset = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(toeditAsset)
         // Do any additional setup after loading the view.
     }
-    
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var brand: UILabel!
-    @IBOutlet weak var initialAccount: UITextField!
 
     /*
     //保存

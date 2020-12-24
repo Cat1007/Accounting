@@ -106,12 +106,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vlR-ij-iXa">
                                 <rect key="frame" x="20" y="428" width="335" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2pd-jB-bYd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WEIXIN.png" translatesAutoresizingMaskIntoConstraints="NO" id="2pd-jB-bYd">
                                         <rect key="frame" x="20" y="35" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Wdu-nM-5QD"/>
                                             <constraint firstAttribute="width" constant="80" id="ldM-D3-duT"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-8T-wKg">
                                         <rect key="frame" x="265" y="62" width="50" height="26"/>
@@ -129,7 +134,8 @@
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                         <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="y98-BH-New"/>
+                                            <action selector="editWechat:" destination="d6D-kW-KVq" eventType="touchUpInside" id="VI0-sU-ONQ"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="sfV-vz-e7I"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -149,12 +155,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxK-gC-pU0">
                                 <rect key="frame" x="20" y="599" width="335" height="150"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97U-V9-whN">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AliPay.png" translatesAutoresizingMaskIntoConstraints="NO" id="97U-V9-whN">
                                         <rect key="frame" x="20" y="35" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="Db3-Og-7UT"/>
                                             <constraint firstAttribute="width" constant="80" id="TkR-Bf-BwF"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGS-vK-8FD">
                                         <rect key="frame" x="265" y="62" width="50" height="26"/>
@@ -172,7 +183,8 @@
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                         <connections>
-                                            <segue destination="VYj-ck-bv3" kind="show" id="gVq-5d-mw2"/>
+                                            <action selector="editAlipay:" destination="d6D-kW-KVq" eventType="touchUpInside" id="oPe-m5-OTa"/>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="21a-ZW-9aG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -209,9 +221,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="资产管理" id="9Ie-Ob-3LW"/>
                     <connections>
-                        <outlet property="Alipay" destination="hGS-vK-8FD" id="vye-Kf-P0E"/>
-                        <outlet property="Wechat" destination="Db7-8T-wKg" id="amB-AM-h5H"/>
-                        <outlet property="salaryCard" destination="Zec-qm-e8s" id="MHK-PS-w9t"/>
+                        <outlet property="alipay" destination="hGS-vK-8FD" id="XlC-9G-WyT"/>
+                        <outlet property="bank" destination="Zec-qm-e8s" id="jOA-b1-V2N"/>
+                        <outlet property="wechat" destination="Db7-8T-wKg" id="ikW-JJ-UvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKf-fU-bJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -295,11 +307,6 @@
                     <navigationItem key="navigationItem" id="dHV-iS-NGX">
                         <barButtonItem key="rightBarButtonItem" title="保存" id="0zQ-AM-EqV"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="brand" destination="GIy-rp-bqa" id="Bls-rY-PHU"/>
-                        <outlet property="icon" destination="ICg-WF-xId" id="abB-jY-eWl"/>
-                        <outlet property="initialAccount" destination="eJf-SG-6Wc" id="9ms-AY-AlC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cly-gP-2NO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,9 +314,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pdI-K7-QQ2"/>
+        <segue reference="sfV-vz-e7I"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AliPay.png" width="400" height="400"/>
+        <image name="BankCard.png" width="500" height="501"/>
+        <image name="WEIXIN.png" width="350" height="350"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
