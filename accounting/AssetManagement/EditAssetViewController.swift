@@ -8,36 +8,40 @@
 
 import UIKit
 
-class EditAssetViewController: UIViewController {
+class EditAssetViewController: UIViewController,UITextFieldDelegate {
     var toEditAccount: AssetAccount?
 
     let toeditAsset = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        accountName.text = toEditAccount!.name
+        balanceField.text = String(toEditAccount!.balance)
+        balanceField.delegate = self
+        saveBtn.isEnabled = false
     }
 
-    /*
-    //保存
-    func saveContacts(){
-        let success = NSKeyedArchiver.archiveRootObject(initialAccount, toFile: userPath)
-        if !success{
-            print("failed...")
+    @IBOutlet weak var accountName: UILabel!
+    @IBOutlet weak var balanceField: UITextField!
+    @IBOutlet weak var saveBtn: UIBarButtonItem!
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("change")
+        if let newBalance = Float(balanceField.text!) {
+            toEditAccount?.balance = newBalance
+            toEditAccount?.lastUpdateTime = Date()
+            saveBtn.isEnabled = true
+        } else {
+            // 不合法值
+            saveBtn.isEnabled = false
         }
+        balanceField.resignFirstResponder()
+        return true
     }
     
-    //加载
-    func loadContacts(){
-        if let initAccount = NSKeyedUnarchiver.unarchiveObject(withFile: contactInfo.userPath) as?
-            [contactInfo]{
-            contactList = contacts
-            print("load file successful")
-        }
-    }
-     */
     
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -45,6 +49,5 @@ class EditAssetViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }

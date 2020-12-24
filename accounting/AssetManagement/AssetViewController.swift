@@ -42,10 +42,7 @@ class AssetViewController: UIViewController {
             accounts.append(AssetAccount(name: "微信", balance: 0))
             accounts.append(AssetAccount(name: "支付宝", balance: 0))
             saveAccount()
-            // 修改页面显示
-            bank.text = String(accounts[0].balance)
-            wechat.text = String(accounts[1].balance)
-            alipay.text = String(accounts[2].balance)
+            updatePage()
         }
     }
     
@@ -59,11 +56,27 @@ class AssetViewController: UIViewController {
         }
     }
     
+    // 更新页面元素
+    func updatePage() {
+        // 修改页面显示
+        bank.text = String(accounts[0].balance)
+        wechat.text = String(accounts[1].balance)
+        alipay.text = String(accounts[2].balance)
+    }
+    
     @IBAction func editBankCard(_ sender: Any) { editAccount = 0 }
     
     @IBAction func editWechat(_ sender: Any) { editAccount = 1 }
     
     @IBAction func editAlipay(_ sender: Any) { editAccount = 2 }
+    
+    @IBAction func saveAccountChange(segue: UIStoryboardSegue) {
+        if let sourceVC = segue.source as? EditAssetViewController, let afterEditAsset  = sourceVC.toEditAccount{
+            accounts[editAccount] = afterEditAsset
+            updatePage()
+            saveAccount()
+        }
+    }
     
     // MARK: - Navigation
 
