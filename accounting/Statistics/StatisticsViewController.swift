@@ -92,13 +92,16 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
         self.dayTableView.reloadData()
         if(monthExpenditure == 0){
             headerExpend.text = String(monthExpenditure)
+            headerDailyExpend.text = String(format: "%.2f",dailyExpenditure)
+            dailyExpend.text = String(format: "%.2f",dailyExpenditure)
+
         }else{
             headerExpend.text = String(-monthExpenditure)
+            headerDailyExpend.text = String(format: "%.2f",-dailyExpenditure)
+            dailyExpend.text = String(format: "%.2f",-dailyExpenditure)
         }
         headerIncome.text = String(monthIncome)
         headerBalance.text = String(format: "%.2f",monthExpenditure + monthIncome)
-        headerDailyExpend.text = String(format: "%.2f",-dailyExpenditure)
-        dailyExpend.text = String(format: "%.2f",-dailyExpenditure)
         income.text = String(monthIncome)
 
     }

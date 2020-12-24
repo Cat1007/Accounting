@@ -25,6 +25,9 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     
     var selectArray:Array = Array<String>()
     var selectType:String = String()
+    
+    var selectedIndexPath = IndexPath(row: 0, section: 0)
+    
     var account:String = String()
     var remarks:String = String()
     var amount:Float = Float()
@@ -96,6 +99,7 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         
         selectArray = expenditureArray
         selectType = selectArray[0]
+        print(selectType)
         accountSelect.isHidden = true
         account = accountArray[0]
         accountLabel.text = account
@@ -149,21 +153,28 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
 //    }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        self.selectedIndexPath = IndexPath(row: 0, section: 0)
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             selectArray = expenditureArray
             amountLabel.textColor = UIColor.systemRed
             self.selectTypeView.reloadData()
-//            self.selectTypeView.layoutIfNeeded()
+            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
+//            let defaultIndex = IndexPath(row: 0, section: 0)
+//            let cell = selectTypeView.cellForItem(at: defaultIndex) as! SelectTypeCollectionViewCell
+//            cell.cellStatusWithSelected(selected: true)
             print(selectType)
             break
         case 1:
             selectArray = incomeArray
             amountLabel.textColor = UIColor.systemGreen
             self.selectTypeView.reloadData()
-//            self.selectTypeView.layoutIfNeeded()
+            self.selectTypeView.layoutIfNeeded()
             selectType = selectArray[0]
+//            let defaultIndex = IndexPath(row: 0, section: 0)
+//            let cell = selectTypeView.cellForItem(at: defaultIndex) as! SelectTypeCollectionViewCell
+//            cell.cellStatusWithSelected(selected: true)
             print(selectType)
             break
         default:
@@ -189,6 +200,12 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
     
     //选中
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        let defaultIndex = IndexPath(row: 0, section: 0)
+        let firstcell = selectTypeView.cellForItem(at: defaultIndex) as! SelectTypeCollectionViewCell
+        firstcell.cellStatusWithSelected(selected: false)
+        
+        self.selectedIndexPath = indexPath
+        
         let cell = collectionView.cellForItem(at: indexPath) as! SelectTypeCollectionViewCell
         cell.isSelected = true
         selectType = cell.cellLabel.text!
@@ -202,8 +219,14 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         cell.isSelected = false
         cell.cellStatusWithSelected(selected: false)
     }
-    
    
+    // cell出现
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath == self.selectedIndexPath {
+            (cell as! SelectTypeCollectionViewCell).isSelected = true
+            (cell as! SelectTypeCollectionViewCell).cellStatusWithSelected(selected: true)
+        }
+    }
     
     // MARK: - UIPickerView DataSource
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
