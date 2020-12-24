@@ -119,6 +119,8 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         //添加按钮默认禁用
         saveButton.isEnabled = false
         
+        timeSelect.maximumDate = UTCTime(date: nil).date
+        
         //键盘弹出监听，解决键盘挡住输入框的问题
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
