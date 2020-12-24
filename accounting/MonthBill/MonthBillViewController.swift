@@ -59,10 +59,8 @@ class MainViewController: UIViewController {
         selectedMonth = today.month
         selectedYear = today.year
         
-        // 调试用填充数据
-        for _ in 1 ..< 10 {
-            billList.append(Bill(amount: -23.43, date: Date(), type: "测试", account: "支付宝", remark: "\(today.year)  \(today.month)  \(today.day)"))
-        }
+        // 从本地拉取列表
+        loadBillFromLocal()
         
         // 初始化picker数据
         initEnabledMonth()
@@ -111,7 +109,7 @@ class MainViewController: UIViewController {
         var billSection = [[Bill]]()
         // 初始化日期数组
         for _ in 1 ..< 32 { billSection.append([Bill]()) }
-        for bill in billList {
+        for bill in billList.reversed() {
             let time = UTCTime(date: bill.date)
             // 检索指定月份的账单
             if time.month == selectedMonth, time.year == selectedYear { billSection[time.day].append(bill) }
@@ -124,7 +122,7 @@ class MainViewController: UIViewController {
         }
         // 清空原列表
         nonEmptyDayList.removeAll()
-        for day in billSection {
+        for day in billSection.reversed() {
             if day.count != 0 { nonEmptyDayList.append(day) }
         }
         
@@ -188,6 +186,26 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    // 保存账单
+    func saveBillToLocal() {
+        let success = NSKeyedArchiver.archiveRootObject(billList, toFile: Bill.billPath)
+        if !success {
+            print("save bills failed")
+        } else {
+            print("save bills success")
+        }
+    }
+    
+    // 拉取账单
+    func loadBillFromLocal() {
+        if let bills = NSKeyedUnarchiver.unarchiveObject(withFile: Bill.billPath) as? [Bill] {
+            billList = bills
+            print("load bills success")
+        } else {
+            print("load bills fail")
+        }
+    }
 
     // 选择月份
     @IBAction func chooseMonth(_ sender: Any) {
@@ -221,6 +239,7 @@ class MainViewController: UIViewController {
     @IBAction func addBill(segue: UIStoryboardSegue) {
         if let addBillVC = segue.source as? AddBillViewController, let editBill  = addBillVC.editBill {
             billList.append(editBill)
+            saveBillToLocal()
             arrangeBill()
         }
     }

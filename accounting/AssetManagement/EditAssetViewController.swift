@@ -19,11 +19,7 @@ class EditAssetViewController: UIViewController {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var brand: UILabel!
     @IBOutlet weak var initialAccount: UITextField!
-    @IBAction func save(_ sender: Any) {
-        initialAccount.text = initialAccount.text!
-    }
-    @IBAction func exit(_ sender: Any) {
-    }
+
     /*
     //保存
     func saveContacts(){

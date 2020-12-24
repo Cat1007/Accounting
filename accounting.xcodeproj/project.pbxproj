@@ -20,6 +20,10 @@
 		16636A15258F3A5600E98371 /* BillListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16636A14258F3A5600E98371 /* BillListController.swift */; };
 		16D49C452589C292007CF1A9 /* AddBill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16D49C432589C292007CF1A9 /* AddBill.storyboard */; };
 		16E9A032258AF19A009E9313 /* UTCTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E9A031258AF19A009E9313 /* UTCTime.swift */; };
+		16FE6E3D259421CD00D5D2BE /* AssetAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE6E3C259421CD00D5D2BE /* AssetAccount.swift */; };
+		16FE6E422594255A00D5D2BE /* BankCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 16FE6E412594255A00D5D2BE /* BankCard.png */; };
+		16FE6E472594256000D5D2BE /* AliPay.png in Resources */ = {isa = PBXBuildFile; fileRef = 16FE6E462594256000D5D2BE /* AliPay.png */; };
+		16FE6E4C259425BD00D5D2BE /* WEIXIN.png in Resources */ = {isa = PBXBuildFile; fileRef = 16FE6E4B259425BD00D5D2BE /* WEIXIN.png */; };
 		1816283A2592E1F2003C4C14 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181628392592E1F2003C4C14 /* AssetViewController.swift */; };
 		181628572592F07C003C4C14 /* EditAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181628562592F07C003C4C14 /* EditAssetViewController.swift */; };
 		1873F699258B023B00E4763E /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1873F68C258AEF5700E4763E /* StatisticsViewController.swift */; };
@@ -64,6 +68,10 @@
 		16636A14258F3A5600E98371 /* BillListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListController.swift; sourceTree = "<group>"; };
 		16D49C442589C292007CF1A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = accounting/MonthBill/accounting/Base.lproj/AddBill.storyboard; sourceTree = "<group>"; };
 		16E9A031258AF19A009E9313 /* UTCTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTime.swift; sourceTree = "<group>"; };
+		16FE6E3C259421CD00D5D2BE /* AssetAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAccount.swift; sourceTree = "<group>"; };
+		16FE6E412594255A00D5D2BE /* BankCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BankCard.png; sourceTree = "<group>"; };
+		16FE6E462594256000D5D2BE /* AliPay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AliPay.png; sourceTree = "<group>"; };
+		16FE6E4B259425BD00D5D2BE /* WEIXIN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WEIXIN.png; sourceTree = "<group>"; };
 		181628392592E1F2003C4C14 /* AssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
 		181628562592F07C003C4C14 /* EditAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetViewController.swift; sourceTree = "<group>"; };
 		1873F68C258AEF5700E4763E /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 			children = (
 				165325C12589AB4200404091 /* Bill.swift */,
 				16E9A031258AF19A009E9313 /* UTCTime.swift */,
+				16FE6E3C259421CD00D5D2BE /* AssetAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +199,9 @@
 				18FCF7812581C28C0084241B /* AppDelegate.swift */,
 				18FCF7832581C28C0084241B /* ViewController.swift */,
 				18FCF7852581C28C0084241B /* Main.storyboard */,
+				16FE6E462594256000D5D2BE /* AliPay.png */,
+				16FE6E4B259425BD00D5D2BE /* WEIXIN.png */,
+				16FE6E412594255A00D5D2BE /* BankCard.png */,
 				160633012590B87A004214E5 /* background.jpeg */,
 				18FCF7882581C28C0084241B /* Assets.xcassets */,
 				18FCF78A2581C28C0084241B /* LaunchScreen.storyboard */,
@@ -322,10 +334,13 @@
 			files = (
 				165325E02589BCAB00404091 /* MonthBill.storyboard in Resources */,
 				16D49C452589C292007CF1A9 /* AddBill.storyboard in Resources */,
+				16FE6E4C259425BD00D5D2BE /* WEIXIN.png in Resources */,
 				18FCF78C2581C28C0084241B /* LaunchScreen.storyboard in Resources */,
+				16FE6E472594256000D5D2BE /* AliPay.png in Resources */,
 				160633022590B87A004214E5 /* background.jpeg in Resources */,
 				18FCF7892581C28C0084241B /* Assets.xcassets in Resources */,
 				165325D02589BBE200404091 /* AssetManagement.storyboard in Resources */,
+				16FE6E422594255A00D5D2BE /* BankCard.png in Resources */,
 				165325D52589BC1500404091 /* Statistics.storyboard in Resources */,
 				18FCF7872581C28C0084241B /* Main.storyboard in Resources */,
 			);
@@ -363,6 +378,7 @@
 				165325CA2589B1F000404091 /* BillListTableViewCell.swift in Sources */,
 				16636A10258F2F7000E98371 /* MonthPickerController.swift in Sources */,
 				0CAA63BB2589D21400F33DE4 /* AddBillViewController.swift in Sources */,
+				16FE6E3D259421CD00D5D2BE /* AssetAccount.swift in Sources */,
 				181628572592F07C003C4C14 /* EditAssetViewController.swift in Sources */,
 				16636A15258F3A5600E98371 /* BillListController.swift in Sources */,
 				1816283A2592E1F2003C4C14 /* AssetViewController.swift in Sources */,
