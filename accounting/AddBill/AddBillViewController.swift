@@ -64,6 +64,10 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
 //        dateFormatter.dateFormat = "yyyy年MM月dd日"
 //        date = dateFormatter.string(from: rawDate)
         amount = Float(amountLabel.text!)!
+        if(segmentedControl.selectedSegmentIndex == 0){
+            amount = -amount
+        }
+//        print("amount: \(amount)")
         if remarks == ""{
             editBill = Bill(amount: amount, date: date, type: selectType, account: account, remark: nil)
         }else{
