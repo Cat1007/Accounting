@@ -17,6 +17,7 @@ class AssetViewController: UIViewController {
     @IBOutlet weak var bank: UILabel!
     @IBOutlet weak var wechat: UILabel!
     @IBOutlet weak var alipay: UILabel!
+    @IBOutlet weak var totalBalance: UILabel!
     
 
     override func viewDidLoad() {
@@ -62,6 +63,7 @@ class AssetViewController: UIViewController {
         bank.text = String(accounts[0].balance)
         wechat.text = String(accounts[1].balance)
         alipay.text = String(accounts[2].balance)
+        
     }
     
     @IBAction func editBankCard(_ sender: Any) { editAccount = 0 }

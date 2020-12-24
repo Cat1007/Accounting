@@ -19,11 +19,23 @@ class EditAssetViewController: UIViewController,UITextFieldDelegate {
         balanceField.text = String(toEditAccount!.balance)
         balanceField.delegate = self
         saveBtn.isEnabled = false
+        if toEditAccount!.name == "银行卡"{
+            accountImage.image = UIImage(named: "BankCard.png")
+        }
+        else if toEditAccount!.name == "微信"{
+            accountImage.image = UIImage(named: "WEIXIN.png")
+        }
+        else if toEditAccount!.name == "支付宝"{
+            accountImage.image = UIImage(named: "AliPay.png")
+        }
+        
+
     }
 
     @IBOutlet weak var accountName: UILabel!
     @IBOutlet weak var balanceField: UITextField!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
+    @IBOutlet weak var accountImage: UIImageView!
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
