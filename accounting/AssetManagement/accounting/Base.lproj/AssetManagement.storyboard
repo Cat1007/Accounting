@@ -300,15 +300,15 @@
                                         <rect key="frame" x="14" y="171" width="347" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初始金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UX-5j-oXA">
-                                                <rect key="frame" x="20" y="39.333333333333314" width="73.666666666666671" height="21.666666666666671"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <rect key="frame" x="20" y="40" width="65.333333333333329" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJf-SG-6Wc">
-                                                <rect key="frame" x="127" y="33" width="200" height="34"/>
+                                                <rect key="frame" x="107" y="33" width="220" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="zdt-0T-j6Y"/>
+                                                    <constraint firstAttribute="width" constant="220" id="zdt-0T-j6Y"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -335,15 +335,26 @@
                                     <constraint firstItem="GIy-rp-bqa" firstAttribute="centerX" secondItem="MjU-vn-HO8" secondAttribute="centerX" id="hY3-vo-zd1"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqc-1U-kRv">
+                                <rect key="frame" x="87.666666666666686" y="364" width="200" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Aj6-gv-YBe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="systemGray2Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fXo-IU-NQs"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="MjU-vn-HO8" secondAttribute="bottom" id="738-h4-2Pg"/>
+                            <constraint firstItem="Hqc-1U-kRv" firstAttribute="centerX" secondItem="8Yf-9R-ZCc" secondAttribute="centerX" id="EHF-dW-0sZ"/>
                             <constraint firstItem="MjU-vn-HO8" firstAttribute="top" secondItem="fXo-IU-NQs" secondAttribute="top" id="LUT-tC-n9g"/>
                             <constraint firstItem="MjU-vn-HO8" firstAttribute="leading" secondItem="fXo-IU-NQs" secondAttribute="leading" id="Vdf-ld-Onk"/>
                             <constraint firstItem="MjU-vn-HO8" firstAttribute="trailing" secondItem="fXo-IU-NQs" secondAttribute="trailing" id="gO1-Ca-2wu"/>
                             <constraint firstItem="MjU-vn-HO8" firstAttribute="centerX" secondItem="8Yf-9R-ZCc" secondAttribute="centerX" id="hZm-ra-KDz"/>
+                            <constraint firstItem="Hqc-1U-kRv" firstAttribute="top" secondItem="eJf-SG-6Wc" secondAttribute="bottom" constant="38" id="wRd-3v-31K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dHV-iS-NGX">
@@ -358,6 +369,7 @@
                         <outlet property="accountName" destination="GIy-rp-bqa" id="UXO-6n-l4m"/>
                         <outlet property="balanceField" destination="eJf-SG-6Wc" id="cem-pJ-eFd"/>
                         <outlet property="saveBtn" destination="0zQ-AM-EqV" id="txT-yP-hbc"/>
+                        <outlet property="timeLabel" destination="Hqc-1U-kRv" id="4Qt-AG-BeB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cly-gP-2NO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -377,6 +389,9 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

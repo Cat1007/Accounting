@@ -11,12 +11,12 @@ import UIKit
 class EditAssetViewController: UIViewController,UITextFieldDelegate {
     var toEditAccount: AssetAccount?
 
-    let toeditAsset = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         accountName.text = toEditAccount!.name
         balanceField.text = String(toEditAccount!.balance)
+        timeLabel.text = "更新时间：" + UTCTime(date: toEditAccount!.lastUpdateTime).getTimeString()
         balanceField.delegate = self
         saveBtn.isEnabled = false
         if toEditAccount!.name == "银行卡"{
@@ -36,6 +36,7 @@ class EditAssetViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var balanceField: UITextField!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     @IBOutlet weak var accountImage: UIImageView!
+    @IBOutlet weak var timeLabel: UILabel!
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

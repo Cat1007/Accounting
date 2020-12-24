@@ -66,6 +66,14 @@ class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    // 定义出现动画
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1)
+        UIView.animate(withDuration: 0.8){
+            cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
+        }
+    }
+    
     // 配置数据源
     func setBillData(bills: [[Bill]]) {
         billList = bills
