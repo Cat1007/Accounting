@@ -85,6 +85,7 @@
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
                                         <connections>
+                                            <action selector="edit:" destination="d6D-kW-KVq" eventType="touchUpInside" id="zIN-AW-hrH"/>
                                             <segue destination="VYj-ck-bv3" kind="show" id="pdI-K7-QQ2"/>
                                         </connections>
                                     </button>
@@ -127,6 +128,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-p2-ggB">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="y98-BH-New"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,6 +171,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry8-yk-TNU">
                                         <rect key="frame" x="294" y="20" width="21" height="22"/>
                                         <state key="normal" image="square.and.pencil" catalog="system"/>
+                                        <connections>
+                                            <segue destination="VYj-ck-bv3" kind="show" id="gVq-5d-mw2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -299,6 +306,9 @@
             <point key="canvasLocation" x="-359" y="185"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pdI-K7-QQ2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">

@@ -10,9 +10,10 @@ import UIKit
 
 class EditAssetViewController: UIViewController {
 
+    let toeditAsset = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(toeditAsset)
         // Do any additional setup after loading the view.
     }
     
@@ -38,7 +39,6 @@ class EditAssetViewController: UIViewController {
         }
     }
      */
-    
     
     
     /*
