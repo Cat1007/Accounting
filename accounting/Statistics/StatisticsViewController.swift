@@ -10,17 +10,23 @@ import UIKit
 
 class StatisticsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    let currentTime = UTCTime(date:nil)
+
     var billList: [Bill] = [Bill]()
-    var sortedList: Array = Array<Any>()
+    var arrangedBill = [[Bill]]()
+    var sortedList = [dailyBill]()
     
+    var monthIncome:Float = 0.0
+    var monthExpenditure:Float = 0.0
+    var dailyExpenditure:Float = 0.0
     //返回对应的cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayListCell", for: indexPath) as! DayListTableViewCell
         //此处绑定cell的文本和分类后列表项的数据
-        cell.balanceText.text = "1243"
-        cell.dateText.text = "1234"
-        cell.expandText.text = "1245"
-        cell.incomeText.text = "1243"
+        cell.balanceText.text = String(sortedList[indexPath.row].balance)
+        cell.dateText.text = sortedList[indexPath.row].date
+        cell.expandText.text = String(-sortedList[indexPath.row].expenditure)
+        cell.incomeText.text = String(sortedList[indexPath.row].income)
         return cell
     }
     
@@ -31,24 +37,95 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
 
     //返回列表项的个数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return sortedList.count
     }
     
     
     @IBOutlet weak var dayTableView: UITableView!
     
+    @IBOutlet weak var headerExpend: UILabel!
+    @IBOutlet weak var headerIncome: UILabel!
+    @IBOutlet weak var headerDailyExpend: UILabel!
+    @IBOutlet weak var headerBalance: UILabel!
+    @IBOutlet weak var dailyExpend: UILabel!
+    @IBOutlet weak var income: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 0 ..< 5 {
-          
-        }
-        
         dayTableView.delegate = self
         dayTableView.dataSource = self
+        // 拉取本地列表
+        loadBillFromLocal()
+        // 分类原始数据
+        arrangeBill()
+        // 生成按日分类列表
+        sortBill()
+        headerExpend.text = String(-monthExpenditure)
+        headerIncome.text = String(monthIncome)
+        headerBalance.text = String(monthExpenditure + monthIncome)
+        headerDailyExpend.text = String(format: "%.2f",-dailyExpenditure)
+        dailyExpend.text = String(format: "%.2f",-dailyExpenditure)
+        income.text = String(monthIncome)
     }
     
+    func loadBillFromLocal() {
+        if let bills = NSKeyedUnarchiver.unarchiveObject(withFile: Bill.billPath) as? [Bill] {
+            billList = bills
+            print("load bills success")
+        } else {
+            print("load bills fail")
+        }
+    }
     
+    func arrangeBill(){
+        // 初始化日期数组
+        for _ in 1 ... 32 { arrangedBill.append([Bill]()) }
+        for bill in billList.reversed() {
+            let time = UTCTime(date: bill.date)
+            // 检索指定月份的账单
+            if time.month == currentTime.month , time.year == currentTime.year { arrangedBill[time.day].append(bill) }
+        }
+    }
+    
+    func sortBill(){
+        var day:Int = Int()
+        let y = currentTime.year
+        switch currentTime.month {
+        case 1,3,5,7,8,10,12:
+            day = 31
+            break
+        case 2:
+            if( y%4==0 && y%100==0 || y%400==0){
+                day = 28
+            }else{
+                day = 29
+            }
+            break
+        default:
+            day = 30
+            break
+        }
+        for index in 1...day{
+            var temp = dailyBill(d: "\(currentTime.month)-\(index)", i: 0.0, e: 0.0, b: 0.0)
+            for item in arrangedBill[index]{
+                if item.amount < 0 {
+                    temp.expenditure = temp.expenditure + item.amount
+                    monthExpenditure = monthExpenditure + item.amount
+                }else{
+                    temp.income = temp.income + item.amount
+                    monthIncome = monthIncome + item.amount
+                }
+                temp.balance = temp.balance + item.amount
+            }
+            if(temp.expenditure != 0 || temp.income != 0){
+                sortedList.append(temp)
+            }
+        }
+        dailyExpenditure = monthExpenditure / Float(day)
+    }
+    
+
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,4 +182,18 @@ class StatisticsViewController: UIViewController,UITableViewDelegate,UITableView
     }
     */
 
+}
+
+class dailyBill {
+    var date :String
+    var income:Float
+    var expenditure:Float
+    var balance: Float
+    
+    init(d:String,i:Float,e:Float,b:Float) {
+        date = d
+        income = i
+        expenditure = e
+        balance = b
+    }
 }

@@ -190,7 +190,7 @@
                                     <outletCollection property="gestureRecognizers" destination="chB-GY-Bnf" appends="YES" id="DtK-dC-qNa"/>
                                 </connections>
                             </view>
-                            <pickerView alpha="0.0" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-HM-3a3">
+                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="cVC-HM-3a3">
                                 <rect key="frame" x="0.0" y="407" width="414" height="435"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
