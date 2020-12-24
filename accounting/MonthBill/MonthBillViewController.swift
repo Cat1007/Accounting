@@ -152,7 +152,7 @@ class MainViewController: UIViewController {
         // 配置统计数据
         expenditureLabel.text = String(expenditure)
         incomeLabel.text = String(income)
-        balanceLabel.text = String(balance)
+        balanceLabel.text = String(format: "%.2f", balance)
         
         // 配置选择列表
         var pickerTitles = [String]()
