@@ -9,9 +9,10 @@
 import UIKit
 class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
     private var billList = [[Bill]]()
+    private var afterDelete: (Int, Int) -> Void = { _, _ in }
     
     // 返回有多少个小节
-    func numberOfSections(in: UITableView) -> Int  {
+    func numberOfSections(in: UITableView) -> Int {
         return billList.count
     }
     
@@ -63,5 +64,20 @@ class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
     // 配置数据源
     func setBillData(bills: [[Bill]]) {
         billList = bills
+    }
+    
+    // 配置删除操作
+    func setDelete(callback: @escaping (Int, Int) -> Void) {
+        self.afterDelete = callback
+    }
+    
+    // 定义删除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 删除操作
+        if editingStyle == .delete {
+            billList[indexPath.section].remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            afterDelete(indexPath.section, indexPath.row)
+        }
     }
 }
