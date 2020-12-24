@@ -10,6 +10,11 @@ import UIKit
 
 class AddBillViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITextFieldDelegate,UIPickerViewDelegate, UIPickerViewDataSource,UITextViewDelegate {
     
+    //解决软键盘遮盖输入框问题
+    //记录 self.view 的原始 origin.y
+//    private var originY: CGFloat = 0
+    //正在输入的UITextField
+//    private var editingText: UITextField?
     
     // 储存将要返回的bill
     var editBill: Bill?
@@ -103,9 +108,41 @@ class AddBillViewController: UIViewController,UICollectionViewDataSource,UIColle
         remarksTextField.layer.cornerRadius = 6
         remarksTextField.returnKeyType = UIReturnKeyType.done
         
+        //添加按钮默认禁用
         saveButton.isEnabled = false
+        
+        //键盘弹出监听，解决键盘挡住输入框的问题
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
     }
+    
+    //键盘弹起
+//    @objc func keyboardWillAppear(notification: NSNotification) {
+//        // 获得软键盘的高
+//        let keyboardinfo = notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey]
+//        let keyboardheight:CGFloat = (keyboardinfo as AnyObject).cgRectValue.size.height
+//
+//        //计算输入框和软键盘的高度差
+//        self.originY = self.view.frame.origin.y
+//        let rect = self.editingText!.convert(self.editingText!.bounds, to: self.view)
+//        let y = self.view.bounds.height - rect.origin.y - self.editingText!.bounds.height - keyboardheight
+//
+//        //设置中心点偏移
+//        UIView.animate(withDuration: 0.5) {
+//            if y < 0 {
+//                self.view.frame.origin.y = (self.originY + y)
+//            }
+//        }
+//    }
+    
+    //键盘落下
+//    @objc func keyboardWillDisappear(notification:NSNotification){
+//        //软键盘收起的时候恢复原始偏移
+//        UIView.animate(withDuration: 0.5) {
+//            self.view.frame.origin.y = self.originY
+//        }
+//    }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
