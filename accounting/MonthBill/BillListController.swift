@@ -57,8 +57,13 @@ class BillListController: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // 返回小节标题
     func tableView(_ tableView: UITableView, titleForHeaderInSection: Int) -> String? {
-        let time = UTCTime(date: billList[titleForHeaderInSection][0].date)
-        return "\(time.month).\(time.day)"
+        if billList[titleForHeaderInSection].count != 0 {
+            let time = UTCTime(date: billList[titleForHeaderInSection][0].date)
+            return "\(time.month).\(time.day)"
+        } else {
+            return "empty"
+        }
+        
     }
     
     // 配置数据源

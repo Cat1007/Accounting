@@ -70,6 +70,12 @@ class MainViewController: UIViewController {
         
         // 配置账单列表
         billListController.setBillData(bills: nonEmptyDayList)
+        billListController.setDelete { section, row in
+            let toDeleteBill = self.nonEmptyDayList[section][row]
+            self.billList.remove(at: self.billList.firstIndex(of: toDeleteBill)!)
+            self.saveBillToLocal()
+            self.arrangeBill()
+        }
         billListView.delegate = billListController
         billListView.dataSource = billListController
         
@@ -90,8 +96,8 @@ class MainViewController: UIViewController {
             backgoundImage.image = defaultBackground
         }
         
-        imagePiackerController.setCallback{image in
-            self.dismiss(animated: true){
+        imagePiackerController.setCallback { image in
+            self.dismiss(animated: true) {
                 let success = NSKeyedArchiver.archiveRootObject(image, toFile: self.backgroundPath)
                 if success {
                     self.backgoundImage.image = image
@@ -228,7 +234,7 @@ class MainViewController: UIViewController {
     @IBAction func tapBackground(_ sender: Any) {
         print("tap")
         let imagePicker = UIImagePickerController()
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             imagePicker.delegate = imagePiackerController
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
@@ -237,7 +243,7 @@ class MainViewController: UIViewController {
     
     // 添加账单后返回入口
     @IBAction func addBill(segue: UIStoryboardSegue) {
-        if let addBillVC = segue.source as? AddBillViewController, let editBill  = addBillVC.editBill {
+        if let addBillVC = segue.source as? AddBillViewController, let editBill = addBillVC.editBill {
             billList.append(editBill)
             saveBillToLocal()
             arrangeBill()
@@ -268,14 +274,14 @@ class EnabledMonth {
 }
 
 class ImagePiackerController: NSObject, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    private var afterChoose: (UIImage) -> Void = {_ in }
+    private var afterChoose: (UIImage) -> Void = { _ in }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         afterChoose(selectedImage!)
     }
     
     func setCallback(callback: @escaping (UIImage) -> Void) {
-        self.afterChoose = callback
+        afterChoose = callback
     }
 }
